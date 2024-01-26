@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0885f594ab85594caa28e1a96cbe0d8, type: 3}
   m_Name: VRTutorialWelcomePage
   m_EditorClassIdentifier: 
+  Modified:
+    m_PersistentCalls:
+      m_Calls: []
   m_Image: {fileID: 2800000, guid: 11e34d76fce7843be984510eca5c9139, type: 3}
   m_WindowTitle:
     m_Untranslated: VR Project Template
@@ -32,6 +35,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: Unity.Tutorials.Core.Editor.TutorialWelcomePage,
+            Unity.Tutorials.Core.Editor
           m_MethodName: CloseCurrentModalDialog
           m_Mode: 1
           m_Arguments:
