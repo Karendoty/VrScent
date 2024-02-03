@@ -6,9 +6,10 @@ using UnityEngine;
 public class RoundSystem : MonoBehaviour
 {
     public GameObject[] objectsToFind;
-    private List<string> foundObjects = new List<string>();
+    //private List<string> foundObjects = new List<string>();
+    private List<GameObject> availableObjects = new List<GameObject>();
 
-    [SerializeField] TMP_Text BoardUI;
+    public TMP_Text BoardUI;
 
     private int currentRound;
     private int maxRounds = 6;
@@ -18,6 +19,10 @@ public class RoundSystem : MonoBehaviour
 
     void Start()
     {
+        //Populate the temporary list with available objects
+        availableObjects.AddRange(objectsToFind);
+
+
         // Select two random objects
         object1 = GetRandomObject();
         object2 = GetRandomObject();
@@ -93,7 +98,25 @@ public class RoundSystem : MonoBehaviour
     GameObject GetRandomObject()
     {
         //Need to make it so that there are no chances of duplicates
-        return objectsToFind[Random.Range(0, objectsToFind.Length)];
+        //return objectsToFind[Random.Range(0, objectsToFind.Length)];
+
+        if (availableObjects.Count == 0)
+        {
+            Debug.LogError("No objects left to find!");
+            return null;
+        }
+
+        // Choose a random index within the range of available objects
+        int randomIndex = Random.Range(0, availableObjects.Count);
+
+        // Retrieve the object at the randomly chosen index
+        GameObject selectedObject = availableObjects[randomIndex];
+
+        // Remove the selected object from the temporary list
+        availableObjects.RemoveAt(randomIndex);
+
+        Debug.Log(selectedObject.name);
+        return selectedObject;
     }
 
     /*void HighlightObject(GameObject obj)
