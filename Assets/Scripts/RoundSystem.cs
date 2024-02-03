@@ -10,6 +10,7 @@ public class RoundSystem : MonoBehaviour
     private List<GameObject> availableObjects = new List<GameObject>();
 
     public TMP_Text BoardUI;
+    public UserFollowUI userFollowUI;
 
     private int currentRound;
     private int maxRounds = 6;
@@ -21,7 +22,6 @@ public class RoundSystem : MonoBehaviour
     {
         //Populate the temporary list with available objects
         availableObjects.AddRange(objectsToFind);
-
 
         // Select two random objects
         object1 = GetRandomObject();
@@ -63,6 +63,8 @@ public class RoundSystem : MonoBehaviour
         {
             currentRound++;
             Debug.Log("Round " + currentRound);
+
+            StartCoroutine(HelperUI());
 
             if (currentRound > 1)
             {
@@ -119,22 +121,14 @@ public class RoundSystem : MonoBehaviour
         return selectedObject;
     }
 
-    /*void HighlightObject(GameObject obj)
+    private IEnumerator HelperUI()
     {
-        Debug.Log("Highlighting " + obj.name);
+        yield return new WaitForSeconds(90f);
 
-        // Check if the object has already been found
-        if (!foundObjects.Contains(obj.name))
-        {
+        userFollowUI.gameObject.SetActive(true);
 
-            foundObjects.Add(obj.name);
-            ShowMessage("You found " + obj.name);
-        }
+        yield return new WaitForSeconds(10f);
+
+        userFollowUI.gameObject.SetActive(false);
     }
-
-    void ShowMessage(string message)
-    {
-        // Display the message in the debug log
-        Debug.Log(message);
-    }*/
 }
