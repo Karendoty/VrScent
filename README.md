@@ -1,0 +1,1 @@
+Brain Health VR (VARScent) project for a simulation aimed to improve cognitive memory in individuals with impairments. The project utilizes a device developed by Brain Health students in order to stimulate the olfactory glands.
