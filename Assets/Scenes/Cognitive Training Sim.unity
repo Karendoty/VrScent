@@ -8606,9 +8606,16 @@ PrefabInstance:
       propertyPath: m_text
       value: "Welcome to the Park!\n\nThe objective of simulation will be to help
         improve your spacial cognitive ability by helping train you on finding and
-        remember locations via smell.\n\n\u2022 To move, push the left joystick forward
-        and release.\n\u2022 To rotate, push the right joystick left or right in
-        the direction "
+        remember locations via smell.\n\nMovement Directions:\n\u2022 To move, push
+        the left joystick forward, point, and release.\n\u2022 To rotate, push the
+        right joystick left or right in the direction you would like to be faced.\n\u2022
+        You can grab interactable objects by using your middle finger to press and
+        hold the 'grip' button located on the on the handle."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855025717785866617, guid: ffff63d7e3a0f584c9def28709b84d60,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.100006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9453,7 +9460,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.759
+      value: 0.836
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
         type: 3}
@@ -11558,7 +11565,7 @@ PrefabInstance:
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -12920,7 +12927,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 11cd62256b1d470f922b2c8e6446cc77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.759
+      value: 0.836
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11cd62256b1d470f922b2c8e6446cc77,
         type: 3}
