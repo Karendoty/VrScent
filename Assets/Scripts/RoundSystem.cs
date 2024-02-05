@@ -96,15 +96,15 @@ public class RoundSystem : MonoBehaviour
             if (currentRound <= 3)
             {
                 
-                Debug.Log("Find " + object1.name);
-                BoardUI.text = "Find " + object1.name;
+                Debug.Log("Find the " + object1.name);
+                BoardUI.text = "Find the " + object1.name;
             }
             else if (currentRound <= 4)
             {
                 currentRound++;
                 Debug.Log("Round " + currentRound);
-                Debug.Log("Find " + object2.name);
-                BoardUI.text = "Find " + object2.name;
+                Debug.Log("Find the " + object2.name);
+                BoardUI.text = "Find the " + object2.name;
             }
             else
             {
@@ -158,7 +158,7 @@ public class RoundSystem : MonoBehaviour
 
         userFollowUI.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
         userFollowUI.gameObject.SetActive(false);
     }
@@ -218,7 +218,7 @@ public class RoundSystem : MonoBehaviour
     {
         userFollowUI.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
         userFollowUI.gameObject.SetActive(false);
     }
