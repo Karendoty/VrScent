@@ -14,7 +14,7 @@ public class RoundSystem : MonoBehaviour
     [Header("UI")]
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
-    [SerializeField] private float UIPopupSpeed = 5f;
+    //[SerializeField] private float UIPopupSpeed = 5f;
 
     private int currentRound;
     private int maxRounds = 6;
@@ -154,11 +154,11 @@ public class RoundSystem : MonoBehaviour
 
     private IEnumerator HelperUI()
     {
-        yield return new WaitForSeconds(UIPopupSpeed);
+        yield return new WaitForSeconds(90f);
 
         userFollowUI.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(UIPopupSpeed);
+        yield return new WaitForSeconds(10f);
 
         userFollowUI.gameObject.SetActive(false);
     }
@@ -218,7 +218,7 @@ public class RoundSystem : MonoBehaviour
     {
         userFollowUI.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(UIPopupSpeed);
+        yield return new WaitForSeconds(10f);
 
         userFollowUI.gameObject.SetActive(false);
     }
