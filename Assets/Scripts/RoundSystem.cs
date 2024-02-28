@@ -51,34 +51,38 @@ public class RoundSystem : MonoBehaviour
         StartNewRound();
     }
 
-    public void CheckObject(GameObject scentObject)
+    public void CheckObject(GameObject goalObject)
     {
-        Debug.Log(scentObject.name);
+        Debug.Log(goalObject.name);
         //Debug.Log("1");
         if (currentRound <= 3)
         {
+            object2.GetComponent<GoalObjectDectection>().isRightObject = false;
+
             //Debug.Log("2");
 
-            if (scentObject.name == object1.name)
+            if (goalObject.name == object1.name)
             {
                 //Debug.Log("3");
-
-                StartNewRound();
+                object1.GetComponent<GoalObjectDectection>().isRightObject = true;
+                //StartNewRound();
             }
         }
         else
         {
+            object1.GetComponent<GoalObjectDectection>().isRightObject = false;
             //Debug.Log("4");
 
-            if (scentObject.name == object2.name)
+            if (goalObject.name == object2.name)
             {
                 //Debug.Log("5");
-                StartNewRound();
+                //StartNewRound();
+                object2.GetComponent<GoalObjectDectection>().isRightObject = true;
             }
         }
     }
 
-    void StartNewRound()
+    public void StartNewRound()
     {
         
         if (currentRound <= maxRounds)
