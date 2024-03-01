@@ -60,12 +60,12 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
         if (useAtomizer)
         {
             currentScent = 1;
-            RunTest();
+            //RunTest();
         }
 
         //if (isMemoryTest) return;
 
-
+        ToggleAllOff();
 
     }
 
@@ -79,7 +79,7 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
     // Executed each frame
     void Update()
     {
-        RunTest();
+        //RunTest();
 
         //If the timer is up then disable all atomizers
         if (scentTimer < 0)
@@ -88,7 +88,7 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
             ToggleSecondAtomizer(false);
             ToggleThirdAtomizer(false);
             ToggleFourthAtomizer(false);
-            RunTest();
+            //RunTest();
             //run break timer when scent timer is up
             breakTimer -= Time.deltaTime;
         }
@@ -113,17 +113,31 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
             Debug.Log("Message arrived: " + message);
     }
 
-    public void RunTimer()
+    /*public void RunTimer()
     {
         scentTimer -= Time.deltaTime;
-    }
+    }*/
 
-    public void StopTest()
+    /*public void StopTest()
     {
         ToggleFirstAtomizer(false);
-    }
+    }*/
 
-    public void RunTest()
+    /*public void TestAtomizer()
+    {
+        if(!useAtomizer)
+        {
+            ToggleFirstAtomizer(true); //Debug.Log("Atomizer on!");
+            useAtomizer = true;
+        }
+        else
+        {
+            ToggleFirstAtomizer(false); //Debug.Log("Atomizer off!");
+            useAtomizer = false;
+        }
+    }*/
+
+   /* public void RunTest()
     {
         scentTimer = scentTime;
         breakTimer = breakTime;
@@ -170,9 +184,9 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
                 if (breakTimer < 0) ResetTimes();   //Wait for break to be up before continuing onto next scent
             }
         }
-    }
+    }*/
 
-    private void ToggleFirstAtomizer(bool status)
+    public void ToggleFirstAtomizer(bool status)
     {
         if (status == firstAtomizerOn) return;
         firstAtomizerOn = status;
@@ -184,7 +198,7 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
         else Debug.Log("First Atomizer off");
     }
 
-    private void ToggleSecondAtomizer(bool status)
+    public void ToggleSecondAtomizer(bool status)
     {
         if (status == secondAtomizerOn) return;
         secondAtomizerOn = status;
@@ -196,7 +210,7 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
         else Debug.Log("Second Atomizer off");
     }
 
-    private void ToggleThirdAtomizer(bool status)
+    public void ToggleThirdAtomizer(bool status)
     {
         if (status == thirdAtomizerOn) return;
         thirdAtomizerOn = status;
@@ -208,7 +222,7 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
         else Debug.Log("Third Atomizer off");
     }
 
-    private void ToggleFourthAtomizer(bool status)
+    public void ToggleFourthAtomizer(bool status)
     {
         if (status == fourthAtomizerOn) return;
         fourthAtomizerOn = status;
@@ -220,12 +234,12 @@ public class Arduino_Setting_Polling_Read_Write : MonoBehaviour
         else Debug.Log("Fourth Atomizer off");
     }
 
-    public void ResetTimes()
+    /*public void ResetTimes()
     {
         scentTimer = scentTime;
         breakTimer = breakTime;
 
-    }
+    }*/
 
     public void ToggleAllOff()
     {

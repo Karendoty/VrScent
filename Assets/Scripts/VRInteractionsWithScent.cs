@@ -17,6 +17,8 @@ public class VRInteractionsWithScent : MonoBehaviour
     private bool secondThresholdPassed = false;
     private bool thirdThresholdPassed = false;
 
+    [SerializeField] private Arduino_Setting_Polling_Read_Write arduino;
+
     void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
@@ -43,7 +45,7 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold one...");
 
                     //Send signal to Atomizer to fire for a small amount of time HERE -->
-
+                    
                     //<--
 
                     firstThresholdPassed = true;
