@@ -5,10 +5,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRInteractionsWithScent : MonoBehaviour
 {
+    [SerializeField] private string scent;
     private XRGrabInteractable grabInteractable;
     [SerializeField] private Transform player;
     private Vector3 direction;
 
+    [Header("Whiff Lengths")]
+    public float activationWhiff1 = 2f;
+    public float activationWhiff2 = 5f;
+    public float activationWhiff3 = 10f;
+
+    [Header("Threashold Distances")]
     [SerializeField] private float firstThreshold;
     [SerializeField] private float secondThreshold;
     [SerializeField] private float thirdThreshold;
@@ -45,7 +52,7 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold one...");
 
                     //Send signal to Atomizer to fire for a small amount of time HERE -->
-                    
+                    StartCoroutine(ActivateScent(activationWhiff1));
                     //<--
 
                     firstThresholdPassed = true;
@@ -58,7 +65,7 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold two...");
 
                     //Send signal to activate Atomizer longer HERE -->
-
+                    StartCoroutine(ActivateScent(activationWhiff2));
                     //<--
 
                     secondThresholdPassed = true;
@@ -73,7 +80,7 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold three...");
 
                     //Send signal to activate Atomizer even longer HERE -->
-
+                    StartCoroutine(ActivateScent(activationWhiff3));
                     //<--
 
                     thirdThresholdPassed = true;
@@ -92,14 +99,34 @@ public class VRInteractionsWithScent : MonoBehaviour
         }
     }
 
-    private void OnSelectEntered(XRBaseInteractor interactor)
+    IEnumerator ActivateScent(float activationLength)
     {
+        switch (scent)
+        {
+            case "coffee":
 
-        /*        else
-                {
-                    // The ray didn't hit anything
-                    Debug.Log("No hit");
-                }
-        */
+                arduino.ToggleFirstAtomizer(true);
+                yield return new WaitForSeconds(activationLength);
+                arduino.ToggleFirstAtomizer(false);
+                break;
+
+            case "cinnamon":
+                arduino.ToggleSecondAtomizer(true);
+                yield return new WaitForSeconds(activationLength);
+                arduino.ToggleSecondAtomizer(false);
+                break;
+
+            case "rose":
+                arduino.ToggleThirdAtomizer(true);
+                yield return new WaitForSeconds(activationLength);
+                arduino.ToggleThirdAtomizer(false);
+                break;
+
+            case "citrus":
+                arduino.ToggleFourthAtomizer(true);
+                yield return new WaitForSeconds(activationLength);
+                arduino.ToggleFourthAtomizer(false);
+                break;
+        }
     }
 }
