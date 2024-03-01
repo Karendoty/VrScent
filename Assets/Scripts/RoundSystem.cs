@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -14,6 +15,7 @@ public class RoundSystem : MonoBehaviour
     [Header("UI")]
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
+    public PointToTarget helperArrow;
     //[SerializeField] private float UIPopupSpeed = 5f;
 
     private int currentRound;
@@ -162,6 +164,13 @@ public class RoundSystem : MonoBehaviour
 
         userFollowUI.gameObject.SetActive(false);
     }
+
+    private IEnumerator ShowHelperArrow()
+    {
+        yield return new WaitForSeconds(90f);
+        helperArrow.gameObject.SetActive(true);
+    }
+    
     private IEnumerator MovePlayer()
     {
         Debug.Log("Relocating player...");
