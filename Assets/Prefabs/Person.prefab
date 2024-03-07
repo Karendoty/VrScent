@@ -691,8 +691,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4.1563625
-  m_Center: {x: 1.049858e-14, y: 0.9175911, z: 2.7387714}
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5470953882705337002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,8 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de8c96e47cf04c488f17d6089f8e40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStayInZone: 0
-  isRightObject: 0
+  timeToStayInZone: 5
   isTimerGoing: 0
 --- !u!1 &7526163211184478191
 GameObject:
