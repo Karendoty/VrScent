@@ -132,6 +132,17 @@ public class RoundSystem : MonoBehaviour
         Transform selectedSpawnPoint = availableSpawnPoints[randomIndex];
         //Debug.Log(selectedSpawnPoint.name);
 
+        if (previousSpawnPoint != null && !availableSpawnPoints.Contains(previousSpawnPoint))
+        {
+            availableSpawnPoints.Add(previousSpawnPoint);
+        }
+
+        previousSpawnPoint = selectedSpawnPoint;
+        availableSpawnPoints.RemoveAt(randomIndex);
+
+        player.transform.position = selectedSpawnPoint.position;
+        player.transform.rotation = selectedSpawnPoint.rotation;
+
         userFollowUI.gameObject.SetActive(false);
     }
 
@@ -141,25 +152,6 @@ public class RoundSystem : MonoBehaviour
         helperArrow.gameObject.SetActive(true);
     }
     
-    private IEnumerator MovePlayer()
-    {
-        Debug.Log("Relocating player...");
-        if (previousSpawnPoint != null && !availableSpawnPoints.Contains(previousSpawnPoint))
-        {
-            availableSpawnPoints.Add(previousSpawnPoint);
-            //Debug.Log("Adding " + previousSpawnPoint + " to list...");
-        }
-
-        previousSpawnPoint = selectedSpawnPoint;
-        //Debug.Log(previousSpawnPoint.name);
-
-        availableSpawnPoints.RemoveAt(randomIndex);
-        //Debug.Log(availableSpawnPoints.Count);
-
-        player.transform.position = selectedSpawnPoint.position;
-        player.transform.rotation = selectedSpawnPoint.rotation;
-    }
-
     private void MoveObject()
     {
         if (switchObjLocation)
