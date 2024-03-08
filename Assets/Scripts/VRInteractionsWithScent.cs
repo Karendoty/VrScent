@@ -6,7 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class VRInteractionsWithScent : MonoBehaviour
 {
     [SerializeField] private string scent;
-    private XRGrabInteractable grabInteractable;
     [SerializeField] private Transform player;
     private Vector3 direction;
 
@@ -24,12 +23,14 @@ public class VRInteractionsWithScent : MonoBehaviour
     private bool secondThresholdPassed = false;
     private bool thirdThresholdPassed = false;
 
+    [Header("Arduino")]
     [SerializeField] private Arduino_Setting_Polling_Read_Write arduino;
+
+    [Header("Tutorial")]
+    public bool isTutorial;
 
     void Start()
     {
-        grabInteractable = GetComponent<XRGrabInteractable>();
-        //grabInteractable.onSelectEntered.AddListener(OnSelectEntered);
     }
 
     private void Update()
@@ -84,6 +85,11 @@ public class VRInteractionsWithScent : MonoBehaviour
                     //<--
 
                     thirdThresholdPassed = true;
+
+                    if(isTutorial)
+                    {
+                        GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextPanel();
+                    }
                 }
                 else if (distanceToPlayer >= thirdThreshold && thirdThresholdPassed)
                 {

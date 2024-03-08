@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 3435388b347dd964ab6f188609c943b1
+  - enabled: 1
+    path: Assets/Scenes/Cognitive Training Sim.unity
+    guid: a28cc036fd257b5439a0daaac0579e58
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

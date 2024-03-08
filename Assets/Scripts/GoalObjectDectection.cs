@@ -15,11 +15,17 @@ public class GoalObjectDectection : MonoBehaviour
     //public bool isRightObject = false;
     public bool isTimerGoing = false;
 
+    [Header("Tutorial")]
+    public bool isTutorial;
+
     private void Start()
     {
         col = GetComponent<SphereCollider>();
-        roundSystem = GameObject.Find("GameManager").GetComponent<RoundSystem>();
         timer = timeToStayInZone;
+        if (!isTutorial)
+        {
+            roundSystem = GameObject.Find("GameManager").GetComponent<RoundSystem>();
+        }
     }
 
     //When player enters the sphere colider it will ask round system if this is the right object. If so start
@@ -35,7 +41,10 @@ public class GoalObjectDectection : MonoBehaviour
                 thresholdPassed = true;
                 //roundSystem.CheckObject(gameObject);
             }
-
+            if (isTutorial)
+            {
+                GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextPanel();
+            }
         }
     }
 
@@ -48,11 +57,15 @@ public class GoalObjectDectection : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    isTimerGoing = false;
-                    StartCoroutine(DetectionCooldown());
-                    roundSystem.StartNewRound();
+                    if (!isTutorial)
+                    {
+                        isTimerGoing = false;
+                        StartCoroutine(DetectionCooldown());
+                        roundSystem.StartNewRound();
 
-                    timer = timeToStayInZone;
+                        timer = timeToStayInZone;
+
+                    }
                 }
             }
         }
