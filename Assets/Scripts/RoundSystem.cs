@@ -12,12 +12,13 @@ public class RoundSystem : MonoBehaviour
     [Header("Goal Objects")]
     //public GameObject[] objectsToFind;
     [SerializeField] GameObject objectToFindPrefab;
-    private GameObject objectToFind;
+    public GameObject objectToFind;
     [SerializeField] private Transform[] objSpawnLocations;
     private Transform initialObjectSpawn;
     private bool switchObjLocation = false;
 
     [Header("UI")]
+    public TMP_Text PopupUI;
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
     public PointToTarget helperArrow;
@@ -38,6 +39,8 @@ public class RoundSystem : MonoBehaviour
     private List<Transform> availableSpawnPoints = new List<Transform>();
     private Transform previousSpawnPoint;
 
+    private bool isGameEnded;
+
     void Start()
     {
         timeTracker = GetComponent<TimeTracker>();
@@ -51,19 +54,20 @@ public class RoundSystem : MonoBehaviour
         objectToFind.name = objectToFindPrefab.name;
         MoveObject();
 
+        StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
+
         StartNewRound();
     }
 
     public void StartNewRound()
     {
-        if (currentRound <= maxRounds)
+        if (currentRound < maxRounds)
         {
             currentRound++;
-            //Debug.Log("Round " + currentRound);
+            Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
-            BoardUI.text = "Find the " + objectToFind.name;
+            PopupUI.text = "Find the " + objectToFind.name;
 
-            StartCoroutine(HelperUI());
 
             if (currentRound > 1)
             {
@@ -86,21 +90,34 @@ public class RoundSystem : MonoBehaviour
 
     private void EndSimulation()
     {
+        isGameEnded = true;
+        playerScreen.fadeTime = 2;
+        playerScreen.FadeOut();
+
         Debug.Log("Ending Game...");
         timeTracker.Export();
         objectToFind.GetComponent<SphereCollider>().enabled = false;
-        //Maybe move the player?
-        //Show score and time
+
+        BoardUI.text = "Thank you for playing! <br> You may now take off the headset.";
+        RelocatePlayer();
     }
 
     //Move player to a random location in the map
     private void RelocatePlayer()
     {
-        StartCoroutine(MovePlayer());
+        if(!isGameEnded)
+        {
+            StartCoroutine(MovePlayer());
+        }
+        else
+        {
+            StartCoroutine(EndingGame());
+        }
     }
 
     private IEnumerator MovePlayer()
     {
+        helperArrow.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(2f);
 
@@ -120,7 +137,7 @@ public class RoundSystem : MonoBehaviour
         playerScreen.fadeTime = 1; //resets back to default
 
         timeTracker.startTimer();
-        StartCoroutine(NewObjectiveUI());
+        StartCoroutine(HelperUI(5f));
     }
 
     private void RandomSpawnPoint()
@@ -146,12 +163,16 @@ public class RoundSystem : MonoBehaviour
         userFollowUI.gameObject.SetActive(false);
     }
 
-    private IEnumerator ShowHelperArrow()
+    private IEnumerator EndingGame()
     {
-        yield return new WaitForSeconds(90f);
-        helperArrow.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+
+        player.transform.position = Vector3.zero;
+        player.transform.rotation = Quaternion.identity;
+
+        playerScreen.FadeIn();
     }
-    
+
     private void MoveObject()
     {
         if (switchObjLocation)
@@ -201,9 +222,11 @@ public class RoundSystem : MonoBehaviour
         }
 
     }
-    private IEnumerator HelperUI()
+    private IEnumerator HelperUI(float time)
     {
-        yield return new WaitForSeconds(90f);
+        StartCoroutine(ShowHelperArrow());
+
+        yield return new WaitForSeconds(time);
 
         userFollowUI.gameObject.SetActive(true);
 
@@ -212,12 +235,11 @@ public class RoundSystem : MonoBehaviour
         userFollowUI.gameObject.SetActive(false);
     }
 
-    private IEnumerator NewObjectiveUI()
+    private IEnumerator ShowHelperArrow()
     {
-        userFollowUI.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(5f);
-
-        userFollowUI.gameObject.SetActive(false);
+        Debug.Log("Pointing the way...");
+        yield return new WaitForSeconds(90f); //90
+        helperArrow.gameObject.SetActive(true);
     }
+
 }
