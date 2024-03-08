@@ -26,6 +26,8 @@ public class UserFollowUI : MonoBehaviour
 	[SerializeField]
 	[Tooltip("The speed used in the lerp function when the camera follows the target")]
 	private float speed = 5;
+
+	[SerializeField] private bool setRotation = true;
      
 	///<summary>
 	/// Contains the positions of the target for the last X seconds
@@ -59,9 +61,12 @@ public class UserFollowUI : MonoBehaviour
 		while( pointsInSpace.Count > 0 && pointsInSpace.Peek().Time <= Time.time - delay + Mathf.Epsilon )
 		{
 			t.position = Vector3.Lerp( t.position, pointsInSpace.Dequeue().Position + offset, Time.deltaTime * speed);
-			t.rotation = Quaternion.Euler(
-				Vector3.Lerp(t.rotation.eulerAngles, pointsInSpace.Dequeue().Rotation, Time.deltaTime * speed)
-			);
+			if (setRotation)
+			{
+				t.rotation = Quaternion.Euler(
+					Vector3.Lerp(t.rotation.eulerAngles, pointsInSpace.Dequeue().Rotation, Time.deltaTime * speed)
+				);
+			}
 		}
 	}
 

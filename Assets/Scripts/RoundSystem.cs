@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
@@ -19,6 +20,7 @@ public class RoundSystem : MonoBehaviour
     [Header("UI")]
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
+    public PointToTarget helperArrow;
     //[SerializeField] private float UIPopupSpeed = 5f;
 
     private int currentRound;
@@ -130,6 +132,18 @@ public class RoundSystem : MonoBehaviour
         Transform selectedSpawnPoint = availableSpawnPoints[randomIndex];
         //Debug.Log(selectedSpawnPoint.name);
 
+        userFollowUI.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowHelperArrow()
+    {
+        yield return new WaitForSeconds(90f);
+        helperArrow.gameObject.SetActive(true);
+    }
+    
+    private IEnumerator MovePlayer()
+    {
+        Debug.Log("Relocating player...");
         if (previousSpawnPoint != null && !availableSpawnPoints.Contains(previousSpawnPoint))
         {
             availableSpawnPoints.Add(previousSpawnPoint);
