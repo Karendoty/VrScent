@@ -21,8 +21,9 @@ public class RoundSystem : MonoBehaviour
     public TMP_Text PopupUI;
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
-    public PointToTarget helperArrow;
-    //[SerializeField] private float UIPopupSpeed = 5f;
+/*    private float uiTimer;
+    private bool isUITimerGoing;
+*/    public PointToTarget helperArrow;
 
     private int currentRound;
     [Tooltip("ONLY USE EITHER 4 OR 8!!")]
@@ -54,11 +55,29 @@ public class RoundSystem : MonoBehaviour
         objectToFind.name = objectToFindPrefab.name;
         MoveObject();
 
-        StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
+/*        isUITimerGoing = true;
+        uiTimer = 60f;
+*/        StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
 
         StartNewRound();
     }
 
+/*    private void Update()
+    {
+        if (isUITimerGoing && userFollowUI.gameObject.activeInHierarchy == false)
+        {
+            if (uiTimer > 0)
+            {
+                uiTimer -= Time.deltaTime;
+            }
+            else if (uiTimer <= 0)
+            {
+                userFollowUI.gameObject.SetActive(true);
+
+            }
+        }
+    }
+*/
     public void StartNewRound()
     {
         if (currentRound < maxRounds)
@@ -105,7 +124,7 @@ public class RoundSystem : MonoBehaviour
     //Move player to a random location in the map
     private void RelocatePlayer()
     {
-        if(!isGameEnded)
+        if (!isGameEnded)
         {
             StartCoroutine(MovePlayer());
         }
@@ -222,6 +241,7 @@ public class RoundSystem : MonoBehaviour
         }
 
     }
+
     private IEnumerator HelperUI(float time)
     {
         StartCoroutine(ShowHelperArrow());
