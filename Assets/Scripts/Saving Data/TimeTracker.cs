@@ -11,6 +11,10 @@ public class TimeTracker : MonoBehaviour
     Stopwatch stopWatch;
     public int teleports;
 
+    List<SaveData> dataList = new List<SaveData>();
+
+    SaveAndLoadData saveSystem = new SaveAndLoadData();
+
     public TimeSpan ts;
     // Start is called before the first frame update
     void Start()
@@ -52,26 +56,52 @@ public class TimeTracker : MonoBehaviour
 
     public void Save()
     {
-        //SaveData send = new SaveData(teleports,ts);
-        SaveAndLoadData.SaveVRData(teleports, ts);
+        SaveData send = new SaveData(teleports,ts);
+        dataList.Add(send);
+        startTimer();
     }
 
-    public void Load()
+    public void saveAllData(){
+        SaveAndLoadData.SaveVRData(dataList);
+        
+
+    }
+
+    public List<SaveData> Load()
     {
         //SaveData send = new SaveData(teleports,ts);
-        SaveData data = SaveAndLoadData.LoadData();
-        UnityEngine.Debug.Log(data.teleports);
-        UnityEngine.Debug.Log(data.time);
+        List<SaveData> data = SaveAndLoadData.LoadData();
+        UnityEngine.Debug.Log(data.Count);
+        return data;
+    }
+
+    
+    public void LoadShow()
+    {
+        //SaveData send = new SaveData(teleports,ts);
+        
+        UnityEngine.Debug.Log(SaveAndLoadData.LoadData().Count);
+       // UnityEngine.Debug.Log(data[1].teleports);
+        //UnityEngine.Debug.Log(data[1].time);
+    }
+
+    string OrganizeOutput(){
+        List<SaveData> data = Load();
+        string ret = "";
+        for(int x = 0; x<data.Count;x++){
+            ret+="Teleports: "+data[x].teleports+" time: "+data[x].time+"\n";
+        }
+        return ret;
     }
 
     public void Export()
     {
-        string data = "Teleports: " + teleports + " time: " + ts;
+        string data = OrganizeOutput();
         string path = Application.persistentDataPath;
 
         using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "export.txt")))
         {
-
+            UnityEngine.Debug.Log(data);
             outputFile.WriteLine(data);
         }
 
