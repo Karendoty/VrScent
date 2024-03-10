@@ -1,26 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Random = UnityEngine.Random;
 
 public class RoundSystem : MonoBehaviour
 {
-    [Header("Scent Objects")]
-    public GameObject[] objectsToFind;
-    private Vector3[] objLocations;
-    private List<GameObject> availableObjects = new List<GameObject>();
+    [Header("Goal Objects")]
+    //public GameObject[] objectsToFind;
+    [SerializeField] GameObject objectToFindPrefab;
+    public GameObject objectToFind;
+    [SerializeField] private Transform[] objSpawnLocations;
+    private Transform initialObjectSpawn;
+    private bool switchObjLocation = false;
 
     [Header("UI")]
+    public TMP_Text PopupUI;
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
-    [SerializeField] private float UIPopupSpeed = 5f;
+/*    private float uiTimer;
+    private bool isUITimerGoing;
+*/    public PointToTarget helperArrow;
 
     private int currentRound;
-    private int maxRounds = 6;
-
-    GameObject object1;
-    GameObject object2;
+    [Tooltip("ONLY USE EITHER 4 OR 8!!")]
+    [SerializeField] private int maxRounds = 4; //ONLY USE EITHER 4 OR 8!!
 
     private TimeTracker timeTracker;
 
@@ -28,64 +35,58 @@ public class RoundSystem : MonoBehaviour
     private Camera playerCamera;
     OVRScreenFade playerScreen;
 
+    [Header("Player Spawning")]
+    public Transform[] playerSpawnPoints;
+    private List<Transform> availableSpawnPoints = new List<Transform>();
+    private Transform previousSpawnPoint;
+
+    private bool isGameEnded;
+
     void Start()
     {
         timeTracker = GetComponent<TimeTracker>();
         player = GameObject.FindWithTag("Player");
         playerCamera = Camera.main;
 
-        objLocations = new Vector3[objectsToFind.Length];
+        //Populate the temporary list with available spawn points
+        availableSpawnPoints.AddRange(playerSpawnPoints);
 
-        for (int i = 0; i < objectsToFind.Length; i++)
-        {
-            objLocations[i] = objectsToFind[i].transform.position;
-        }
+        objectToFind = Instantiate(objectToFindPrefab);
+        objectToFind.name = objectToFindPrefab.name;
+        MoveObject();
 
-        //Populate the temporary list with available objects
-        availableObjects.AddRange(objectsToFind);
-
-        // Select two random objects
-        object1 = GetRandomObject();
-        object2 = GetRandomObject();
+/*        isUITimerGoing = true;
+        uiTimer = 60f;
+*/        StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
 
         StartNewRound();
     }
 
-    public void CheckObject(GameObject scentObject)
+/*    private void Update()
     {
-        Debug.Log(scentObject.name);
-        //Debug.Log("1");
-        if (currentRound <= 3)
+        if (isUITimerGoing && userFollowUI.gameObject.activeInHierarchy == false)
         {
-            //Debug.Log("2");
-
-            if (scentObject.name == object1.name)
+            if (uiTimer > 0)
             {
-                //Debug.Log("3");
-
-                StartNewRound();
+                uiTimer -= Time.deltaTime;
             }
-        }
-        else
-        {
-            //Debug.Log("4");
-
-            if (scentObject.name == object2.name)
+            else if (uiTimer <= 0)
             {
-                //Debug.Log("5");
-                StartNewRound();
+                userFollowUI.gameObject.SetActive(true);
+
             }
         }
     }
-
-    void StartNewRound()
+*/
+    public void StartNewRound()
     {
-        
-        if (currentRound <= maxRounds)
+        if (currentRound < maxRounds)
         {
             currentRound++;
             Debug.Log("Round " + currentRound);
-            StartCoroutine(HelperUI());
+            //Debug.Log("Find the " + objectToFind.name);
+            PopupUI.text = "Find the " + objectToFind.name;
+
 
             if (currentRound > 1)
             {
@@ -93,78 +94,49 @@ public class RoundSystem : MonoBehaviour
                 RelocatePlayer();
             }
 
-            if (currentRound <= 3)
+            //After halfway through, move object again.
+            if (currentRound == (maxRounds / 2) + 1)
             {
-                
-                Debug.Log("Find " + object1.name);
-                BoardUI.text = "Find " + object1.name;
-            }
-            else if (currentRound <= 4)
-            {
-                currentRound++;
-                Debug.Log("Round " + currentRound);
-                Debug.Log("Find " + object2.name);
-                BoardUI.text = "Find " + object2.name;
-            }
-            else
-            {
-                EndSimulation();
+                switchObjLocation = true;
+                MoveObject();
             }
         }
-
-        /*HighlightObject(object1);
-        HighlightObject(object2);*/
+        else
+        {
+            EndSimulation();
+        }
     }
 
     private void EndSimulation()
     {
+        isGameEnded = true;
+        playerScreen.fadeTime = 2;
+        playerScreen.FadeOut();
+
+        Debug.Log("Ending Game...");
         timeTracker.Export();
-        //Maybe move the player?
-        //Show score and time
+        objectToFind.GetComponent<SphereCollider>().enabled = false;
+
+        BoardUI.text = "Thank you for playing! <br> You may now take off the headset.";
+        RelocatePlayer();
     }
 
     //Move player to a random location in the map
     private void RelocatePlayer()
     {
-
-        StartCoroutine(MovePlayer());
-
-    }
-
-    GameObject GetRandomObject()
-    {
-        if (availableObjects.Count == 0)
+        if (!isGameEnded)
         {
-            Debug.LogError("No objects left to find!");
-            return null;
+            StartCoroutine(MovePlayer());
         }
-
-        // Choose a random index within the range of available objects
-        int randomIndex = Random.Range(0, availableObjects.Count);
-
-        // Retrieve the object at the randomly chosen index
-        GameObject selectedObject = availableObjects[randomIndex];
-
-        // Remove the selected object from the temporary list
-        availableObjects.RemoveAt(randomIndex);
-
-        Debug.Log(selectedObject.name);
-        return selectedObject;
+        else
+        {
+            StartCoroutine(EndingGame());
+        }
     }
 
-    private IEnumerator HelperUI()
-    {
-        yield return new WaitForSeconds(UIPopupSpeed);
-
-        userFollowUI.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(UIPopupSpeed);
-
-        userFollowUI.gameObject.SetActive(false);
-    }
     private IEnumerator MovePlayer()
     {
-        Debug.Log("Relocating player...");
+        helperArrow.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(2f);
 
@@ -175,34 +147,7 @@ public class RoundSystem : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        //Relocate all object to respective spots
-        for (int i = 0; i < objectsToFind.Length; i++)
-        {
-            // Get the XRGrabInteractable component attached to the current object
-            XRGrabInteractable grabInteractable = objectsToFind[i].GetComponent<XRGrabInteractable>();
-
-            // Check if the grabInteractable is not null before attempting to access its properties
-            if (grabInteractable != null)
-            {
-                // Optionally, you might want to set the object as not being currently grabbed
-                if (grabInteractable.isSelected)
-                {
-                    grabInteractable.enabled = false;
-                    grabInteractable.enabled = true;
-                }
-                // Set the position of the current object to the corresponding position from objLocations
-                objectsToFind[i].transform.position = objLocations[i];
-            }
-            else
-            {
-                Debug.LogWarning("XRGrabInteractable component not found on object: " + objectsToFind[i].name);
-            }
-        }
-
-
-        //right now it only teleports them to the begining but ideally it would be randomly in the map
-        player.transform.position = new Vector3(0, player.transform.position.y, -6);
-        player.transform.rotation = Quaternion.identity;
+        RandomSpawnPoint();
 
         yield return new WaitForSeconds(2f);
 
@@ -211,15 +156,110 @@ public class RoundSystem : MonoBehaviour
         playerScreen.fadeTime = 1; //resets back to default
 
         timeTracker.startTimer();
-        StartCoroutine(NewObjectiveUI());
+        StartCoroutine(HelperUI(5f));
     }
 
-    private IEnumerator NewObjectiveUI()
+    private void RandomSpawnPoint()
     {
-        userFollowUI.gameObject.SetActive(true);
+        //Debug.Log("Called");
 
-        yield return new WaitForSeconds(UIPopupSpeed);
+        int randomIndex = Random.Range(0, availableSpawnPoints.Count);
+
+        Transform selectedSpawnPoint = availableSpawnPoints[randomIndex];
+        //Debug.Log(selectedSpawnPoint.name);
+
+        if (previousSpawnPoint != null && !availableSpawnPoints.Contains(previousSpawnPoint))
+        {
+            availableSpawnPoints.Add(previousSpawnPoint);
+        }
+
+        previousSpawnPoint = selectedSpawnPoint;
+        availableSpawnPoints.RemoveAt(randomIndex);
+
+        player.transform.position = selectedSpawnPoint.position;
+        player.transform.rotation = selectedSpawnPoint.rotation;
 
         userFollowUI.gameObject.SetActive(false);
     }
+
+    private IEnumerator EndingGame()
+    {
+        yield return new WaitForSeconds(2f);
+
+        player.transform.position = Vector3.zero;
+        player.transform.rotation = Quaternion.identity;
+
+        playerScreen.FadeIn();
+    }
+
+    private void MoveObject()
+    {
+        if (switchObjLocation)
+        {
+            string initialSpawnName = initialObjectSpawn.name;
+            switch (initialSpawnName)
+            {
+                //objSpawnLocations[0]
+                case "Point 1":
+                    //Debug.Log("Going to Point 3");
+                    objectToFind.transform.position = objSpawnLocations[2].position;
+                    objectToFind.transform.rotation = objSpawnLocations[2].rotation;
+                    break;
+                //objSpawnLocations[1]
+                case "Point 2":
+                    //Debug.Log("Going to Point 4");
+                    objectToFind.transform.position = objSpawnLocations[3].position;
+                    objectToFind.transform.rotation = objSpawnLocations[3].rotation;
+                    break;
+                //objSpawnLocations[2]
+                case "Point 3":
+                    //Debug.Log("Going to Point 1");
+                    objectToFind.transform.position = objSpawnLocations[0].position;
+                    objectToFind.transform.rotation = objSpawnLocations[0].rotation;
+                    break;
+                //objSpawnLocations[3]
+                case "Point 4":
+                    //Debug.Log("Going to Point 2");
+                    objectToFind.transform.position = objSpawnLocations[1].position;
+                    objectToFind.transform.rotation = objSpawnLocations[1].rotation;
+                    break;
+            }
+
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, objSpawnLocations.Length);
+
+            Transform selectedTransform = objSpawnLocations[randomIndex];
+
+            initialObjectSpawn = selectedTransform;
+
+            //Debug.Log(selectedTransform.name);
+
+            objectToFind.transform.position = selectedTransform.position;
+            objectToFind.transform.rotation = selectedTransform.rotation;
+        }
+
+    }
+
+    private IEnumerator HelperUI(float time)
+    {
+        StartCoroutine(ShowHelperArrow());
+
+        yield return new WaitForSeconds(time);
+
+        userFollowUI.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+
+        userFollowUI.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowHelperArrow()
+    {
+        Debug.Log("Pointing the way...");
+        yield return new WaitForSeconds(90f); //90
+        helperArrow.gameObject.SetActive(true);
+    }
+
 }
