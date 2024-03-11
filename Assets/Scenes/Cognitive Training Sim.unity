@@ -22389,7 +22389,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Welcome to the Park!
 
-'
+
+        You will recive instructions shortly.
+
+        Take
+        a moment to explore!'
       objectReference: {fileID: 0}
     - target: {fileID: 8798018602392889741, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
@@ -22429,7 +22433,7 @@ PrefabInstance:
     - target: {fileID: 8855025717785866617, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 108.2
+      value: 5.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -30202,7 +30206,7 @@ PrefabInstance:
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -30257,7 +30261,7 @@ PrefabInstance:
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeOut
+      value: FadeIn
       objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
