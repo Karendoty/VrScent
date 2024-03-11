@@ -21,15 +21,30 @@ public class RoundSystem : MonoBehaviour
     public TMP_Text PopupUI;
     public TMP_Text BoardUI;
     public UserFollowUI userFollowUI;
-/*    private float uiTimer;
-    private bool isUITimerGoing;
-*/    public PointToTarget helperArrow;
+    public PointToTarget helperArrow;
 
-    private int currentRound;
+    [Header("UI Timer")]
+    public float uiTimer;
+    [Tooltip("How long it takes for the UI to pop up the first round")]
+    [SerializeField] private float maxUITime;
+    public float uiTimerDuration;
+    [Tooltip("How long it takes for the UI to turn off")]
+    [SerializeField] private float maxUITimeUp;
+    public float arrowTimer;
+    [Tooltip("How long it takes for the arrow to pop up")]
+    [SerializeField] private float maxArrowTime;
+    private bool isUITimerGoing;
+    private bool isUIUp;
+    private bool isArrowTimerGoing;
+
+
+    [Header("Rounds")]
     [Tooltip("ONLY USE EITHER 4 OR 8!!")]
     [SerializeField] private int maxRounds = 4; //ONLY USE EITHER 4 OR 8!!
+    private int currentRound;
 
-    private TimeTracker timeTracker;
+    [Header("Player Timer")]
+    public TimeTracker timeTracker;
 
     private GameObject player;
     private Camera playerCamera;
@@ -39,6 +54,7 @@ public class RoundSystem : MonoBehaviour
     public Transform[] playerSpawnPoints;
     private List<Transform> availableSpawnPoints = new List<Transform>();
     private Transform previousSpawnPoint;
+    public Transform originalSpawnPoint;
 
     private bool isGameEnded;
 
@@ -55,17 +71,22 @@ public class RoundSystem : MonoBehaviour
         objectToFind.name = objectToFindPrefab.name;
         MoveObject();
 
-/*        isUITimerGoing = true;
-        uiTimer = 60f;
-*/        StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
+        isUITimerGoing = true;
+        isArrowTimerGoing = true;
+        uiTimer = maxUITime;
+        uiTimerDuration = maxUITimeUp;
+        arrowTimer = 90; //for the first round we want it to be longer because they are exploring the area
+        //StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
 
         StartNewRound();
     }
 
-/*    private void Update()
+    private void Update()
     {
-        if (isUITimerGoing && userFollowUI.gameObject.activeInHierarchy == false)
+        //After timer ends, the UI will pop up.
+        if (isUITimerGoing)
         {
+            //Debug.Log("UI");
             if (uiTimer > 0)
             {
                 uiTimer -= Time.deltaTime;
@@ -73,25 +94,58 @@ public class RoundSystem : MonoBehaviour
             else if (uiTimer <= 0)
             {
                 userFollowUI.gameObject.SetActive(true);
-
+                isUITimerGoing = false;
+                isUIUp = true;
             }
         }
+
+        if (isUIUp)
+        {
+            if (uiTimerDuration > 0)
+            {
+                uiTimerDuration -= Time.deltaTime;
+            }
+            else if (uiTimerDuration <= 0)
+            {
+                userFollowUI.gameObject.SetActive(false);
+                uiTimerDuration = maxUITimeUp;
+                isUIUp = false;
+            }
+        }
+
+        if (isArrowTimerGoing) //this isn't executing for some reason
+        {
+            //Debug.Log("Arrow");
+            if (arrowTimer > 0)
+            {
+                arrowTimer -= Time.deltaTime;
+                //Debug.Log(arrowTimer);
+            }
+            else if (arrowTimer <= 0)
+            {
+                helperArrow.gameObject.SetActive(true);
+                isArrowTimerGoing = false;
+            }
+        }
+
     }
-*/
+
     public void StartNewRound()
     {
         if (currentRound < maxRounds)
         {
+
             currentRound++;
             Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
             PopupUI.text = "Find the " + objectToFind.name;
 
-
             if (currentRound > 1)
             {
                 timeTracker.stopTimer();
                 RelocatePlayer();
+
+                ResetUI();
             }
 
             //After halfway through, move object again.
@@ -137,6 +191,7 @@ public class RoundSystem : MonoBehaviour
     private IEnumerator MovePlayer()
     {
         helperArrow.gameObject.SetActive(false);
+        userFollowUI.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(2f);
 
@@ -156,7 +211,10 @@ public class RoundSystem : MonoBehaviour
         playerScreen.fadeTime = 1; //resets back to default
 
         timeTracker.startTimer();
-        StartCoroutine(HelperUI(5f));
+
+        //Enables UI Popup timer
+        isUITimerGoing = true;
+        uiTimer = 5f;
     }
 
     private void RandomSpawnPoint()
@@ -186,8 +244,8 @@ public class RoundSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        player.transform.position = Vector3.zero;
-        player.transform.rotation = Quaternion.identity;
+        player.transform.position = originalSpawnPoint.position;
+        player.transform.rotation = originalSpawnPoint.rotation;
 
         playerScreen.FadeIn();
     }
@@ -242,24 +300,16 @@ public class RoundSystem : MonoBehaviour
 
     }
 
-    private IEnumerator HelperUI(float time)
+    private void ResetUI()
     {
-        StartCoroutine(ShowHelperArrow());
+        isUITimerGoing = false;
+        isUIUp = false;
 
-        yield return new WaitForSeconds(time);
+        uiTimer = maxUITime;
+        uiTimerDuration = maxUITimeUp;
 
-        userFollowUI.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(5f);
-
-        userFollowUI.gameObject.SetActive(false);
+        helperArrow.gameObject.SetActive(false);
+        isArrowTimerGoing = false;
+        arrowTimer = maxArrowTime;
     }
-
-    private IEnumerator ShowHelperArrow()
-    {
-        Debug.Log("Pointing the way...");
-        yield return new WaitForSeconds(90f); //90
-        helperArrow.gameObject.SetActive(true);
-    }
-
 }
