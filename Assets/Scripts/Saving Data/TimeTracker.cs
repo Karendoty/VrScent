@@ -15,10 +15,16 @@ public class TimeTracker : MonoBehaviour
 
     SaveAndLoadData saveSystem = new SaveAndLoadData();
 
+    public TimeSpan goalTS;
+    public int goalTP;
+
     public TimeSpan ts;
+
+    public GameObject endingScreen;
     // Start is called before the first frame update
     void Start()
     {
+        goalTS = new TimeSpan(0,1,1);
         stopWatch = new Stopwatch();
         startTimer(); //<-- we might want to change it later to start after player is done w/ tutorial
     }
@@ -56,7 +62,7 @@ public class TimeTracker : MonoBehaviour
 
     public void Save()
     {
-        SaveData send = new SaveData(teleports,ts);
+        SaveData send = new SaveData(teleports,ts,goalTS,goalTP);
         dataList.Add(send);
         startTimer();
     }
@@ -75,14 +81,74 @@ public class TimeTracker : MonoBehaviour
         return data;
     }
 
+    public int getTps(){
+        //SaveData send = new SaveData(teleports,ts);
+        float total = 0;
+        TimeSpan totalTime = TimeSpan.Zero;
+        
+        List<SaveData> loadedData = Load();
+        for(int x = 0; x< loadedData.Count; x++){
+            total+=loadedData[x].teleports;
+            totalTime+=loadedData[x].time;
+        }
+        float average = total/loadedData.Count;
+        TimeSpan averageTime = TimeSpan.FromTicks(totalTime.Ticks / loadedData.Count);
+
+
+        return CalculatePercentage(average,loadedData[0].goalTeleports);
+        //UnityEngine.Debug.Log(CalculatePercentage(averageTime,loadedData[0].goalTime));
+    }
+
+    public int getTs(){
+        //SaveData send = new SaveData(teleports,ts);
+        float total = 0;
+        TimeSpan totalTime = TimeSpan.Zero;
+        
+        List<SaveData> loadedData = Load();
+        for(int x = 0; x< loadedData.Count; x++){
+            total+=loadedData[x].teleports;
+            totalTime+=loadedData[x].time;
+        }
+        float average = total/loadedData.Count;
+        TimeSpan averageTime = TimeSpan.FromTicks(totalTime.Ticks / loadedData.Count);
+
+
+         //CalculatePercentage(average,loadedData[0].goalTeleports);
+        return CalculatePercentage(averageTime,loadedData[0].goalTime);
+    }
+
     
     public void LoadShow()
     {
-        //SaveData send = new SaveData(teleports,ts);
-        
-        UnityEngine.Debug.Log(SaveAndLoadData.LoadData().Count);
+
+
+
+
        // UnityEngine.Debug.Log(data[1].teleports);
         //UnityEngine.Debug.Log(data[1].time);
+    }
+
+    int CalculatePercentage(float given, int goal){
+        if(goal>given){
+            return (int)((given/(float)(goal))*100);
+        }else{
+            return (int)(((float)goal/given)*100);
+        }
+    }
+
+    int CalculatePercentage(TimeSpan givenTS, TimeSpan goalTS){
+        float goal = (float)goalTS.Ticks;
+        float given = (float)givenTS.Ticks;
+        if(given>goal){
+            return((int)((goal/given)*100));
+        }else{
+            return((int)((given/goal)*100));
+
+        }
+    }
+
+    public void ShowEnding(){
+        endingScreen.SetActive(true);
     }
 
     string OrganizeOutput(){
