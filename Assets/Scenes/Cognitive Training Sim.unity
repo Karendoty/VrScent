@@ -882,7 +882,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -994,7 +994,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -1578,7 +1578,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -1905,7 +1905,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -2088,7 +2088,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -2376,7 +2376,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -2488,7 +2488,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -3534,7 +3534,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -3798,7 +3798,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -4447,7 +4447,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -4624,7 +4624,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -5600,7 +5600,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -6229,7 +6229,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -6551,7 +6551,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -6663,7 +6663,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -6840,7 +6840,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -7626,7 +7626,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -7849,7 +7849,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -8137,7 +8137,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -8467,7 +8467,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -8646,7 +8646,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -8758,7 +8758,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -8870,7 +8870,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -9613,7 +9613,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -9725,7 +9725,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -9837,7 +9837,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -10020,7 +10020,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -10132,7 +10132,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -10315,7 +10315,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -10427,7 +10427,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -14296,7 +14296,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -14408,7 +14408,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -14520,7 +14520,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -14867,7 +14867,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -15218,7 +15218,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -15612,7 +15612,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -15876,7 +15876,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -16059,7 +16059,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -16242,7 +16242,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -16579,7 +16579,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -17072,7 +17072,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -17249,7 +17249,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -17818,7 +17818,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -17930,7 +17930,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -18048,7 +18048,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -18411,7 +18411,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -18594,7 +18594,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -18862,7 +18862,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -19895,12 +19895,20 @@ MonoBehaviour:
   BoardUI: {fileID: 1736217259}
   userFollowUI: {fileID: 18321008}
   helperArrow: {fileID: 1391717280}
+  uiTimer: 0
+  maxUITime: 60
+  uiTimerDuration: 0
+  maxUITimeUp: 10
+  arrowTimer: 0
+  maxArrowTime: 60
   maxRounds: 4
+  timeTracker: {fileID: 0}
   playerSpawnPoints:
   - {fileID: 527089446}
   - {fileID: 1068341039}
   - {fileID: 1389651863}
   - {fileID: 1059271573}
+  originalSpawnPoint: {fileID: 1311797591}
 --- !u!4 &758912257
 Transform:
   m_ObjectHideFlags: 0
@@ -20034,7 +20042,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -20146,7 +20154,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -20258,7 +20266,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -20370,7 +20378,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -20547,7 +20555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489846, guid: 43a5f581e928d1c40af75bbf1ab0dc19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.129
       objectReference: {fileID: 0}
     - target: {fileID: 489846, guid: 43a5f581e928d1c40af75bbf1ab0dc19, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20924,7 +20932,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -21562,7 +21570,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -21739,7 +21747,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -21984,6 +21992,7 @@ Transform:
   - {fileID: 1068341039}
   - {fileID: 1389651863}
   - {fileID: 1059271573}
+  - {fileID: 1311797591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &859052154
@@ -22091,7 +22100,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -22236,7 +22245,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -22380,7 +22389,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Welcome to the Park!
 
-'
+
+        You will recive instructions shortly.
+
+        Take
+        a moment to explore!'
       objectReference: {fileID: 0}
     - target: {fileID: 8798018602392889741, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
@@ -22420,7 +22433,7 @@ PrefabInstance:
     - target: {fileID: 8855025717785866617, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 108.2
+      value: 5.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -22553,7 +22566,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -22838,7 +22851,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -23090,7 +23103,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -23202,7 +23215,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -23314,7 +23327,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -23426,7 +23439,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -23609,7 +23622,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24075,7 +24088,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24193,7 +24206,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24305,7 +24318,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24417,7 +24430,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24529,7 +24542,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24712,7 +24725,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -24824,7 +24837,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -25084,7 +25097,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -25318,7 +25331,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -25856,7 +25869,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -26067,7 +26080,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -26250,7 +26263,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -26731,7 +26744,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -26769,7 +26782,7 @@ PrefabInstance:
     - target: {fileID: 9180796559197460183, guid: 75e7adf2b647bbc4aafe049f3f32bfc8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.437
+      value: 0.112
       objectReference: {fileID: 0}
     - target: {fileID: 9180796559197460183, guid: 75e7adf2b647bbc4aafe049f3f32bfc8,
         type: 3}
@@ -26992,7 +27005,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -27579,7 +27592,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -27691,7 +27704,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -28012,7 +28025,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -28198,7 +28211,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -28404,7 +28417,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -28868,7 +28881,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -29159,7 +29172,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -29376,7 +29389,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -29892,7 +29905,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -30004,7 +30017,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -30193,7 +30206,7 @@ PrefabInstance:
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -30248,7 +30261,7 @@ PrefabInstance:
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeOut
+      value: FadeIn
       objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948805, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -30290,6 +30303,12 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9014170784424948811, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_Reticle
+      value: 
+      objectReference: {fileID: 2380729201600037813, guid: 516526e035680d74aba3ff7d713df441,
+        type: 3}
     - target: {fileID: 9067829889149138881, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_IsActive
@@ -30635,7 +30654,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -30747,7 +30766,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -30865,7 +30884,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -30977,7 +30996,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -31560,7 +31579,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -31672,7 +31691,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -31867,7 +31886,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -32155,7 +32174,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -32267,7 +32286,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -32379,7 +32398,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -33010,7 +33029,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -33363,7 +33382,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -33487,7 +33506,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -33708,6 +33727,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ff373953893b2c44968fbf1e5c2d186, type: 3}
+--- !u!1 &1311797590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311797591}
+  m_Layer: 0
+  m_Name: OriginalSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311797591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311797590}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857893031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1314433528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33813,7 +33863,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -33925,7 +33975,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -34142,7 +34192,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -34325,7 +34375,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -35188,7 +35238,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -35300,7 +35350,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -35594,7 +35644,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -35706,7 +35756,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -36216,7 +36266,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -36818,7 +36868,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -37066,7 +37116,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -37342,7 +37392,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -37454,7 +37504,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -37850,7 +37900,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -37962,7 +38012,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -38074,7 +38124,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -38186,7 +38236,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -38846,7 +38896,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -38964,7 +39014,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -39289,7 +39339,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -39401,7 +39451,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -39817,7 +39867,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -39994,7 +40044,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -40547,7 +40597,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -40827,7 +40877,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -41016,7 +41066,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -41345,7 +41395,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -41605,7 +41655,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -42165,7 +42215,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -42443,7 +42493,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -42555,7 +42605,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -42667,7 +42717,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -42909,7 +42959,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -43321,7 +43371,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -43721,7 +43771,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -43975,7 +44025,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -44235,7 +44285,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -44769,7 +44819,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -44881,7 +44931,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -45407,7 +45457,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -45935,7 +45985,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -46914,7 +46964,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -47097,7 +47147,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -47428,7 +47478,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -47540,7 +47590,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -47822,7 +47872,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -47934,7 +47984,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -48046,7 +48096,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -48328,7 +48378,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -48428,7 +48478,7 @@ Transform:
   m_GameObject: {fileID: 1984100803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.72526, y: 0.626, z: 45.577698}
+  m_LocalPosition: {x: -50.72526, y: 0.301, z: 45.577698}
   m_LocalScale: {x: 0.65529, y: 0.3685875, z: 0.65529}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48675,7 +48725,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -48805,7 +48855,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -49020,7 +49070,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -49330,7 +49380,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -49951,7 +50001,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -51008,7 +51058,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -51231,7 +51281,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -51377,7 +51427,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -51489,7 +51539,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -51737,7 +51787,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -52288,7 +52338,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -52400,7 +52450,7 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 1281298094}
   m_MatchOrientation: 0
-  m_MatchDirectionalInput: 1
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
   m_FilterSelectionByHitNormal: 0
   m_UpNormalToleranceDegrees: 30
@@ -55166,7 +55216,7 @@ PrefabInstance:
     - target: {fileID: 1700260607730771144, guid: 149da54e9faaa9445979b399d68eef28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0364224
+      value: -1.3614223
       objectReference: {fileID: 0}
     - target: {fileID: 1700260607730771144, guid: 149da54e9faaa9445979b399d68eef28,
         type: 3}
@@ -57391,7 +57441,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -63886,7 +63936,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -64603,7 +64653,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -65624,7 +65674,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -65849,7 +65899,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -65982,7 +66032,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -66208,7 +66258,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -66900,7 +66950,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -67323,7 +67373,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -67977,7 +68027,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -68109,7 +68159,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -68400,7 +68450,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -68548,7 +68598,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -68702,7 +68752,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -68865,7 +68915,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -68998,7 +69048,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -69743,7 +69793,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -70189,7 +70239,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -71031,7 +71081,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -71185,7 +71235,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -71569,7 +71619,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -71689,7 +71739,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -71908,7 +71958,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -72028,7 +72078,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -72270,7 +72320,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -72397,7 +72447,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -72714,7 +72764,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -73019,7 +73069,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -73146,7 +73196,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -73279,7 +73329,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -73481,7 +73531,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -73875,7 +73925,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -74007,7 +74057,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -74140,7 +74190,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -74260,7 +74310,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -74681,7 +74731,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -74814,7 +74864,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -75016,7 +75066,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -75473,7 +75523,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -75777,7 +75827,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -75981,7 +76031,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2147483648
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
