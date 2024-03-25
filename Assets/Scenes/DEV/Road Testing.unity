@@ -995,12 +995,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1461642434493988572}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &135028768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2077103561750199922, guid: 149da54e9faaa9445979b399d68eef28,
-    type: 3}
-  m_PrefabInstance: {fileID: 1461642434493988572}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140337378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1720,7 @@ MonoBehaviour:
   secondThreshold: 5
   thirdThreshold: 3
   arduino: {fileID: 0}
+  isTutorial: 0
 --- !u!65 &302139348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2701,13 +2696,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fbda60e28816c4285a7430d578f2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToFind:
-  - {fileID: 2582230416612114304}
-  - {fileID: 135028768}
-  - {fileID: 302139343}
-  - {fileID: 1002744570}
+  objectToFindPrefab: {fileID: 0}
+  objectToFind: {fileID: 0}
+  objSpawnLocations: []
+  PopupUI: {fileID: 0}
   BoardUI: {fileID: 18321006}
   userFollowUI: {fileID: 18321008}
+  helperArrow: {fileID: 0}
+  uiTimer: 0
+  maxUITime: 0
+  uiTimerDuration: 0
+  maxUITimeUp: 0
+  arrowTimer: 0
+  maxArrowTime: 0
+  maxRounds: 4
+  timeTracker: {fileID: 0}
+  playerSpawnPoints: []
+  originalSpawnPoint: {fileID: 0}
 --- !u!4 &758912257
 Transform:
   m_ObjectHideFlags: 0
@@ -3020,12 +3025,6 @@ Transform:
 --- !u!4 &1002744569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6019966317958452400, guid: 92ad36192a860864a999b3751d55fc05,
-    type: 3}
-  m_PrefabInstance: {fileID: 9145691911950903563}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1002744570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6395366368837537290, guid: 92ad36192a860864a999b3751d55fc05,
     type: 3}
   m_PrefabInstance: {fileID: 9145691911950903563}
   m_PrefabAsset: {fileID: 0}
@@ -3623,6 +3622,7 @@ MonoBehaviour:
   secondThreshold: 5
   thirdThreshold: 3
   arduino: {fileID: 0}
+  isTutorial: 0
 --- !u!65 &1061768673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5921,6 +5921,7 @@ MonoBehaviour:
   secondThreshold: 5
   thirdThreshold: 3
   arduino: {fileID: 0}
+  isTutorial: 0
 --- !u!65 &1601716050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7136,6 +7137,7 @@ MonoBehaviour:
   secondThreshold: 5
   thirdThreshold: 3
   arduino: {fileID: 0}
+  isTutorial: 0
 --- !u!65 &1918945730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8178,6 +8180,7 @@ MonoBehaviour:
   secondThreshold: 5
   thirdThreshold: 3
   arduino: {fileID: 0}
+  isTutorial: 0
 --- !u!65 &2057736193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8834,12 +8837,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a678c02ee5eacde459f14cdd7cc5e7a1, type: 3}
---- !u!1 &2582230416612114304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 75588428109458721, guid: c1012937a813c954681fdca635eeb1c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 4337463392020671673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2926843111075210554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 740661727597197211, guid: c1012937a813c954681fdca635eeb1c9,
@@ -9191,6 +9188,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5464147859906778286}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6025417886996516298
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.855546
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -178.57729
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 138.8713
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645261286269217726, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653691180918254746, guid: 5af52a7f52e83104bac1b9e82b34b21e,
+        type: 3}
+      propertyPath: m_Name
+      value: -- Detailing --
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5af52a7f52e83104bac1b9e82b34b21e, type: 3}
 --- !u!1001 &6546187827949126518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9710,3 +9775,4 @@ SceneRoots:
   - {fileID: 758912257}
   - {fileID: 6836392599229633447}
   - {fileID: 75835085285088160}
+  - {fileID: 6025417886996516298}
