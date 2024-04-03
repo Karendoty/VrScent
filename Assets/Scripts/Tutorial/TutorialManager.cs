@@ -40,7 +40,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject circle;
     [SerializeField] private GameObject bench;
 
-    public OVRScreenFade playerCamera;
+    public FadeToBlack fade;
 
     // Start is called before the first frame update
     void Start()
@@ -167,8 +167,8 @@ public class TutorialManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        playerCamera.fadeTime = 5f;
-        playerCamera.FadeOut();
+        fade.fadeDuration = 5f;
+        fade.FadeOut();
 
         yield return new WaitForSeconds(6);
 
