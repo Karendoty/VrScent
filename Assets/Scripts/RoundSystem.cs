@@ -48,7 +48,7 @@ public class RoundSystem : MonoBehaviour
 
     private GameObject player;
     private Camera playerCamera;
-    OVRScreenFade playerScreen;
+    [SerializeField] private FadeToBlack fade;
 
     [Header("Player Spawning")]
     public Transform[] playerSpawnPoints;
@@ -164,8 +164,8 @@ public class RoundSystem : MonoBehaviour
     private void EndSimulation()
     {
         isGameEnded = true;
-        playerScreen.fadeTime = 2;
-        playerScreen.FadeOut();
+        fade.fadeDuration = 2;
+        fade.FadeOut();
 
         Debug.Log("Ending Game...");
         timeTracker.Export();
@@ -196,9 +196,8 @@ public class RoundSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //fade out
-        playerScreen = playerCamera.GetComponent<OVRScreenFade>();
-        playerScreen.fadeTime = 2; //increase fade time
-        playerScreen.FadeOut();
+        fade.fadeDuration = 2; //increase fade time
+        fade.FadeOut();
 
         yield return new WaitForSeconds(3f);
 
@@ -207,13 +206,14 @@ public class RoundSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //fade in
-        playerScreen.FadeIn();
-        playerScreen.fadeTime = 1; //resets back to default
+        fade.FadeIn();
+        fade.fadeDuration = 1; //resets back to default
 
         timeTracker.startTimer();
 
         //Enables UI Popup timer
         isUITimerGoing = true;
+        isArrowTimerGoing = true;
         uiTimer = 5f;
     }
 
@@ -247,7 +247,9 @@ public class RoundSystem : MonoBehaviour
         player.transform.position = originalSpawnPoint.position;
         player.transform.rotation = originalSpawnPoint.rotation;
 
-        playerScreen.FadeIn();
+        fade.FadeIn();
+
+        ResetUI();
     }
 
     private void MoveObject()
