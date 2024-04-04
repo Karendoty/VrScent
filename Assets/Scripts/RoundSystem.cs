@@ -73,9 +73,9 @@ public class RoundSystem : MonoBehaviour
 
         isUITimerGoing = true;
         isArrowTimerGoing = true;
-        uiTimer = maxUITime;
+        uiTimer = 120;
         uiTimerDuration = maxUITimeUp;
-        arrowTimer = 90; //for the first round we want it to be longer because they are exploring the area
+        arrowTimer = 210f; //for the first round we want it to be longer because they are exploring the area
         //StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
 
         StartNewRound();

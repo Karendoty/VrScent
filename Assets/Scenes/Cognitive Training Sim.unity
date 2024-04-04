@@ -5456,6 +5456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TableSet
       objectReference: {fileID: 0}
+    - target: {fileID: 8293338035454876769, guid: a15687ed2f64ac64b9d5b47801f96d84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24267,7 +24272,7 @@ PrefabInstance:
     - target: {fileID: 1509180164593724667, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.03
+      value: -0.019
       objectReference: {fileID: 0}
     - target: {fileID: 1509180164593724667, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
@@ -24345,7 +24350,7 @@ PrefabInstance:
       value: 'Welcome to the Park!
 
 
-        You will recive instructions shortly.
+        You will receive instructions shortly.
 
         Take
         a moment to explore!'
@@ -24383,12 +24388,12 @@ PrefabInstance:
     - target: {fileID: 8855025717785866617, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.350006
+      value: 0.8999939
       objectReference: {fileID: 0}
     - target: {fileID: 8855025717785866617, guid: ffff63d7e3a0f584c9def28709b84d60,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.7
+      value: 5.699997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -81301,11 +81306,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 5229823}
+  - {fileID: 758912257}
   - {fileID: 16619476}
   - {fileID: 341831224}
   - {fileID: 1888503230}
   - {fileID: 274994519}
-  - {fileID: 758912257}
   - {fileID: 881228629}
   - {fileID: 857893031}
   - {fileID: 1199183469}

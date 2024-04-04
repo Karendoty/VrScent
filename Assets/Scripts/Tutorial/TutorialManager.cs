@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : MonoBehaviour
 {
     [Header("UI")]
+    [SerializeField] private Transform UI;
+
     [SerializeField] private GameObject startPanel;
     [SerializeField] private Animator welcomeTxt;
     [SerializeField] private Animator continueTxt;
@@ -28,6 +30,10 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private Animator finishTxt;
     [SerializeField] private Animator continueTxt2;
 
+    [Header("UI Position")]
+    [SerializeField] private Transform UIPosition1;
+    [SerializeField] private Transform UIPosition2;
+
     private bool hasInitated = false;
     private bool hasTeleported = false;
     private bool hasRotated = false;
@@ -41,6 +47,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject bench;
 
     public FadeToBlack fade;
+
 
     // Start is called before the first frame update
     void Start()
@@ -116,8 +123,10 @@ public class TutorialManager : MonoBehaviour
             case "Scent":
                 scentPanel.SetActive(false);
                 findPanel.SetActive(true);
-                scentObject.SetActive(false);
+                //scentObject.SetActive(false);
                 bench.SetActive(true);
+                UI.position = UIPosition1.position;
+                UI.rotation = UIPosition1.rotation;
 
                 findTxt.Play("Fade In");
 
@@ -126,7 +135,9 @@ public class TutorialManager : MonoBehaviour
             case "Find":
                 findPanel.SetActive(false);
                 finishPanel.SetActive(true);
-                bench.SetActive(false);
+                //bench.SetActive(false);
+                UI.position = UIPosition2.position;
+                UI.rotation = UIPosition2.rotation;
 
                 finishTxt.Play("Fade In");
                 StartCoroutine(StartBlink(continueTxt2));

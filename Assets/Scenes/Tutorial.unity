@@ -1491,6 +1491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1093904997}
+  - {fileID: 707623854}
   m_Father: {fileID: 135469253}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533731411
@@ -1781,6 +1782,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678971986}
   m_CullTransparentMesh: 1
+--- !u!1 &686608277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686608278}
+  m_Layer: 0
+  m_Name: UIPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &686608278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686608277}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.07410855, y: 0, z: 0, w: 0.9972502}
+  m_LocalPosition: {x: 0, y: 34.3, z: 64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1242585309}
+  m_LocalEulerAnglesHint: {x: -8.5, y: 0, z: 0}
+--- !u!1 &707623853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707623854}
+  m_Layer: 0
+  m_Name: UIPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707623854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707623853}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.052402657, y: -0.7051624, z: -0.052402657, w: 0.7051624}
+  m_LocalPosition: {x: -9.28, y: 3.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 506632314}
+  m_LocalEulerAnglesHint: {x: -8.5, y: -90, z: 0}
 --- !u!1 &735764949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,7 +3260,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213237968}
-  m_LocalRotation: {x: -0.07485363, y: -0, z: -0, w: 0.9971945}
+  m_LocalRotation: {x: -0.07410855, y: 0, z: 0, w: 0.9972502}
   m_LocalPosition: {x: 0, y: 0, z: 9.186}
   m_LocalScale: {x: 0.00477365, y: 0.00477365, z: 0.00477365}
   m_ConstrainProportionsScale: 0
@@ -3209,7 +3272,7 @@ RectTransform:
   - {fileID: 1402607476}
   - {fileID: 996722572}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -8.586, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -8.5, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 4.55}
@@ -3541,7 +3604,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9180796559197460183, guid: 75e7adf2b647bbc4aafe049f3f32bfc8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 686608278}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8368652897846004845, guid: 75e7adf2b647bbc4aafe049f3f32bfc8,
         type: 3}
@@ -4287,6 +4354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6faae4e9c16f145a99b0a1215e407e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 1213237972}
   startPanel: {fileID: 1734074782}
   welcomeTxt: {fileID: 460554096}
   continueTxt: {fileID: 336003943}
@@ -4301,6 +4369,8 @@ MonoBehaviour:
   finishPanel: {fileID: 996722571}
   finishTxt: {fileID: 1956502631}
   continueTxt2: {fileID: 1320283668}
+  UIPosition1: {fileID: 707623854}
+  UIPosition2: {fileID: 686608278}
   demoLeftController: {fileID: 908756555}
   demoRightController: {fileID: 6037729}
   scentObject: {fileID: 506632310}

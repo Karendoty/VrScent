@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de8c96e47cf04c488f17d6089f8e40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStayInZone: 5
+  timeToStayInZone: 3
   isTimerGoing: 0
   isTutorial: 0
 --- !u!1001 &2156779585976162051
