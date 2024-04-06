@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class WanderingAI : MonoBehaviour
 {
-    public AnimationClip idleAnimation;
+  public AnimationClip idleAnimation;
         public AnimationClip walkingAnimation;
 
         public float moveSpeed = 3f;
         public float rotSpeed = 100f;
+        public float turnDuration = 3f;
 
         private Animator animator;
         private bool isWalking = false;
@@ -44,9 +45,9 @@ public class WanderingAI : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
                 {
-                    // If obstacle detected, rotate to avoid it
+                    // If obstacle detected, start turning
                     isWalking = false;
-                    StartCoroutine(RotateToAvoidObstacle());
+                    StartCoroutine(Turn());
                 }
             }
         }
@@ -59,11 +60,13 @@ public class WanderingAI : MonoBehaviour
             {
                 if (walking)
                 {
-                    animator.CrossFade(walkingAnimation.name, 0.1f); // Adjust the crossfade time as needed
+                    // Play walking animation with the correct speed
+                    animator.Play(walkingAnimation.name);
                 }
                 else
                 {
-                    animator.CrossFade(idleAnimation.name, 0.1f); // Adjust the crossfade time as needed
+                    // Play idle animation with the correct speed
+                    animator.Play(idleAnimation.name);
                 }
             }
         }
@@ -83,31 +86,25 @@ public class WanderingAI : MonoBehaviour
                 isWalking = false;
                 SetWalkingAnimation(false);
 
-                // Rotate left for 3 seconds
-                isRotating = true;
-                yield return new WaitForSeconds(3f);
-                isRotating = false;
-
-                // Rotate right for 3 seconds
-                transform.rotation = Quaternion.identity; // Reset rotation before rotating right
-                isRotating = true;
-                yield return new WaitForSeconds(3f);
-                isRotating = false;
-
-                // Wait for 5 seconds before next wandering cycle
+                // Wait for 5 seconds before starting next wandering cycle
                 yield return new WaitForSeconds(5f);
             }
         }
 
-        IEnumerator RotateToAvoidObstacle()
+        IEnumerator Turn()
         {
-            // Rotate left or right randomly to avoid obstacle
+            // Rotate left for turnDuration seconds
             isRotating = true;
-            float rotateTime = Random.Range(1f, 2f); // Randomize rotation time
-            float rotateDirection = Random.Range(0, 2) == 0 ? -1f : 1f; // Randomize rotation direction
-            yield return new WaitForSeconds(rotateTime);
+            yield return new WaitForSeconds(turnDuration);
             isRotating = false;
-            yield return new WaitForSeconds(0.5f); // Wait for a short time before resuming walking
+
+            // Rotate right for turnDuration seconds
+            transform.rotation = Quaternion.identity; // Reset rotation before rotating right
+            isRotating = true;
+            yield return new WaitForSeconds(turnDuration);
+            isRotating = false;
+
+            // Continue walking after turning
             isWalking = true;
         }
     }
