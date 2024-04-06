@@ -5,11 +5,13 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TimeTracker : MonoBehaviour
 {
     Stopwatch stopWatch;
     public int teleports;
+    public TeleportationProvider tp;
 
     List<SaveData> dataList = new List<SaveData>();
 
@@ -26,7 +28,8 @@ public class TimeTracker : MonoBehaviour
     {
         goalTS = new TimeSpan(0,1,1);
         stopWatch = new Stopwatch();
-        startTimer(); //<-- we might want to change it later to start after player is done w/ tutorial
+        //tp.endLocomotion() += AddTeleport();
+        //startTimer(); //<-- we might want to change it later to start after player is done w/ tutorial
     }
 
     // Update is called once per frame
@@ -64,7 +67,7 @@ public class TimeTracker : MonoBehaviour
     {
         SaveData send = new SaveData(teleports,ts,goalTS,goalTP);
         dataList.Add(send);
-        startTimer();
+        //startTimer();
     }
 
     public void saveAllData(){
@@ -81,7 +84,7 @@ public class TimeTracker : MonoBehaviour
         return data;
     }
 
-    public int getTps(){
+    /*public int getTps(){
         //SaveData send = new SaveData(teleports,ts);
         float total = 0;
         TimeSpan totalTime = TimeSpan.Zero;
@@ -96,6 +99,26 @@ public class TimeTracker : MonoBehaviour
 
 
         return CalculatePercentage(average,loadedData[0].goalTeleports);
+        //UnityEngine.Debug.Log(CalculatePercentage(averageTime,loadedData[0].goalTime));
+    }*/
+
+    public void AddTeleport()
+    {
+        teleports++;
+        UnityEngine.Debug.Log(teleports);
+    }
+
+    public int getTps(){
+        //SaveData send = new SaveData(teleports,ts);
+        int total = 0;
+        
+        List<SaveData> loadedData = Load();
+        for(int x = 0; x< loadedData.Count; x++){
+            total+=loadedData[x].teleports;
+        }
+        float average = total/loadedData.Count;
+
+        return total;
         //UnityEngine.Debug.Log(CalculatePercentage(averageTime,loadedData[0].goalTime));
     }
 
@@ -116,7 +139,6 @@ public class TimeTracker : MonoBehaviour
          //CalculatePercentage(average,loadedData[0].goalTeleports);
         return CalculatePercentage(averageTime,loadedData[0].goalTime);
     }
-
     
     public void LoadShow()
     {
