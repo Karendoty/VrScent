@@ -13,9 +13,8 @@ public class WanderingAI : MonoBehaviour
 
         private Animator animator;
         private bool isWalking = false;
+        private bool isRotating = false;
         private bool isWandering = false;
-        private bool isRotatingLeft = false;
-        private bool isRotatingRight = false;
 
         void Start()
         {
@@ -25,19 +24,31 @@ public class WanderingAI : MonoBehaviour
             {
                 // Disable auto play of animations since we'll control it manually
                 animator.applyRootMotion = false;
-                StartCoroutine(ShuffleClips());
                 StartCoroutine(Wander());
             }
         }
 
         void Update()
         {
-            if (isRotatingRight)
+            if (isRotating)
+            {
+                // Rotate the AI
                 transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
-            if (isRotatingLeft)
-                transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
-            if (isWalking)
+            }
+            else if (isWalking)
+            {
+                // Move the AI forward
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+                // Check for collision with obstacles
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
+                {
+                    // If obstacle detected, rotate to avoid it
+                    isWalking = false;
+                    StartCoroutine(RotateToAvoidObstacle());
+                }
+            }
         }
 
         void SetWalkingAnimation(bool walking)
@@ -48,48 +59,11 @@ public class WanderingAI : MonoBehaviour
             {
                 if (walking)
                 {
-                    Debug.Log("Playing walking animation");
                     animator.CrossFade(walkingAnimation.name, 0.1f); // Adjust the crossfade time as needed
                 }
                 else
                 {
-                    Debug.Log("Playing idle animation");
                     animator.CrossFade(idleAnimation.name, 0.1f); // Adjust the crossfade time as needed
-                }
-            }
-        }
-
-        void StopWandering()
-        {
-            isWandering = false;
-            isWalking = false;
-            isRotatingLeft = false;
-            isRotatingRight = false;
-        }
-
-        IEnumerator ShuffleClips()
-        {
-            while (true)
-            {
-                yield return new WaitForSeconds(15.0f + Random.value * 5.0f);
-                SetWalkingAnimation(false); // Ensure idle animation is played when random clip is selected
-                PlayAnyClip();
-            }
-        }
-
-        void PlayAnyClip()
-        {
-            if (animator != null && idleAnimation != null && walkingAnimation != null)
-            {
-                // Randomly choose between idle and walking animation
-                var randomAnimation = Random.Range(0, 2);
-                if (randomAnimation == 0)
-                {
-                    animator.CrossFade(idleAnimation.name, 0.1f); // Adjust the crossfade time as needed
-                }
-                else
-                {
-                    animator.CrossFade(walkingAnimation.name, 0.1f); // Adjust the crossfade time as needed
                 }
             }
         }
@@ -98,38 +72,42 @@ public class WanderingAI : MonoBehaviour
         {
             while (true)
             {
-                if (!isWandering)
-                {
-                    int rotTime = Random.Range(1, 3);
-                    int rotateWait = Random.Range(1, 4);
-                    int rotateLorR = Random.Range(1, 3);
-                    int walkWait = Random.Range(1, 5);
-                    int walkTime = Random.Range(1, 6);
+                // Start walking
+                isWalking = true;
+                SetWalkingAnimation(true);
 
-                    isWandering = true;
+                // Walk for 10 seconds
+                yield return new WaitForSeconds(10f);
 
-                    yield return new WaitForSeconds(walkWait);
-                    isWalking = true;
-                    yield return new WaitForSeconds(walkTime);
-                    isWalking = false;
-                    yield return new WaitForSeconds(rotateWait);
+                // Stop walking
+                isWalking = false;
+                SetWalkingAnimation(false);
 
-                    if (rotateLorR == 1)
-                    {
-                        isRotatingRight = true;
-                        yield return new WaitForSeconds(rotTime);
-                        isRotatingRight = false;
-                    }
-                    if (rotateLorR == 2)
-                    {
-                        isRotatingLeft = true;
-                        yield return new WaitForSeconds(rotTime);
-                        isRotatingLeft = false;
-                    }
+                // Rotate left for 3 seconds
+                isRotating = true;
+                yield return new WaitForSeconds(3f);
+                isRotating = false;
 
-                    isWandering = false;
-                }
-                yield return null;
+                // Rotate right for 3 seconds
+                transform.rotation = Quaternion.identity; // Reset rotation before rotating right
+                isRotating = true;
+                yield return new WaitForSeconds(3f);
+                isRotating = false;
+
+                // Wait for 5 seconds before next wandering cycle
+                yield return new WaitForSeconds(5f);
             }
+        }
+
+        IEnumerator RotateToAvoidObstacle()
+        {
+            // Rotate left or right randomly to avoid obstacle
+            isRotating = true;
+            float rotateTime = Random.Range(1f, 2f); // Randomize rotation time
+            float rotateDirection = Random.Range(0, 2) == 0 ? -1f : 1f; // Randomize rotation direction
+            yield return new WaitForSeconds(rotateTime);
+            isRotating = false;
+            yield return new WaitForSeconds(0.5f); // Wait for a short time before resuming walking
+            isWalking = true;
         }
     }
