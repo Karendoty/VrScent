@@ -5,17 +5,17 @@ using UnityEngine.AI;
 
 public class WanderingAI : MonoBehaviour
 {
-  public AnimationClip idleAnimation;
+   public AnimationClip idleAnimation;
         public AnimationClip walkingAnimation;
 
         public float moveSpeed = 3f;
         public float rotSpeed = 100f;
-        public float turnDuration = 3f;
+        public float turnDuration = 1.5f; // Adjust turn duration as needed
+        public float collisionCooldown = 2f; // Cooldown period after collision
 
         private Animator animator;
         private bool isWalking = false;
-        private bool isRotating = false;
-        private bool isWandering = false;
+        private bool isCooldown = false;
 
         void Start()
         {
@@ -31,23 +31,23 @@ public class WanderingAI : MonoBehaviour
 
         void Update()
         {
-            if (isRotating)
-            {
-                // Rotate the AI
-                transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
-            }
-            else if (isWalking)
+            if (isWalking)
             {
                 // Move the AI forward
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
-                // Check for collision with obstacles
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
+                // Check for collision with obstacles if not on cooldown
+                if (!isCooldown)
                 {
-                    // If obstacle detected, start turning
-                    isWalking = false;
-                    StartCoroutine(Turn());
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
+                    {
+                        // If obstacle detected, stop walking, play idle animation, and start turning
+                        isWalking = false;
+                        SetWalkingAnimation(false);
+                        StartCoroutine(Turn());
+                        StartCoroutine(Cooldown());
+                    }
                 }
             }
         }
@@ -76,14 +76,12 @@ public class WanderingAI : MonoBehaviour
             while (true)
             {
                 // Start walking
-                isWalking = true;
                 SetWalkingAnimation(true);
 
                 // Walk for 10 seconds
                 yield return new WaitForSeconds(10f);
 
                 // Stop walking
-                isWalking = false;
                 SetWalkingAnimation(false);
 
                 // Wait for 5 seconds before starting next wandering cycle
@@ -93,18 +91,30 @@ public class WanderingAI : MonoBehaviour
 
         IEnumerator Turn()
         {
-            // Rotate left for turnDuration seconds
-            isRotating = true;
-            yield return new WaitForSeconds(turnDuration);
-            isRotating = false;
+            Quaternion startRotation = transform.rotation;
+            Quaternion targetRotation = Quaternion.Euler(0, transform.eulerAngles.y + 90f, 0); // Target rotation for turning
 
-            // Rotate right for turnDuration seconds
-            transform.rotation = Quaternion.identity; // Reset rotation before rotating right
-            isRotating = true;
-            yield return new WaitForSeconds(turnDuration);
-            isRotating = false;
+            float elapsedTime = 0f;
+            while (elapsedTime < turnDuration)
+            {
+                // Interpolate rotation smoothly
+                transform.rotation = Quaternion.Lerp(startRotation, targetRotation, elapsedTime / turnDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
 
-            // Continue walking after turning
-            isWalking = true;
+            // Ensure exact target rotation
+            transform.rotation = targetRotation;
+
+            // Resume walking
+            SetWalkingAnimation(true);
+        }
+
+        IEnumerator Cooldown()
+        {
+            // Set cooldown flag to prevent immediate collision detection
+            isCooldown = true;
+            yield return new WaitForSeconds(collisionCooldown);
+            isCooldown = false;
         }
     }
