@@ -16,8 +16,8 @@ public class EndingSetup : MonoBehaviour
 
     void OnEnable()
     {
-        tp.SetText("Teleport Percentage: "+tracker.getTps().ToString()+"%");
-        ts.SetText("Time Percentage: "+tracker.getTs().ToString()+"%");
+        ts.SetText("Round Times: <br>"+tracker.getTs().ToString());
+        tp.SetText("Total Teleports: " + tracker.getTps().ToString());
     }
     // Update is called once per frame
     void Update()

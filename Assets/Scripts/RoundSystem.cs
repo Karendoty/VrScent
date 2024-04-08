@@ -40,7 +40,7 @@ public class RoundSystem : MonoBehaviour
 
     [Header("Rounds")]
     [Tooltip("ONLY USE EITHER 4 OR 8!!")]
-    [SerializeField] private int maxRounds = 4; //ONLY USE EITHER 4 OR 8!!
+    [SerializeField] private int maxRounds = 6; //ONLY USE NUMBERS DIVISIBLE BY 2!!
     private int currentRound;
 
     [Header("Player Timer")]
@@ -164,6 +164,8 @@ public class RoundSystem : MonoBehaviour
 
     private void EndSimulation()
     {
+        timeTracker.stopTimer();
+
         isGameEnded = true;
         fade.fadeDuration = 2;
         fade.FadeOut();

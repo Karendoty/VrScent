@@ -22,13 +22,15 @@ public class TimeTracker : MonoBehaviour
 
     public TimeSpan ts;
 
+    string roundTimes;
+
     public GameObject endingScreen;
     // Start is called before the first frame update
     void Start()
     {
         goalTS = new TimeSpan(0,1,1);
         stopWatch = new Stopwatch();
-        //tp.endLocomotion() += AddTeleport();
+        
         //startTimer(); //<-- we might want to change it later to start after player is done w/ tutorial
     }
 
@@ -48,8 +50,8 @@ public class TimeTracker : MonoBehaviour
     {
         stopWatch.Stop();
         ts = stopWatch.Elapsed;
-        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            ts.Hours, ts.Minutes, ts.Seconds,
+        string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
+            ts.Minutes, ts.Seconds,
             ts.Milliseconds / 10);
 
         UnityEngine.Debug.Log(elapsedTime);
@@ -114,7 +116,7 @@ public class TimeTracker : MonoBehaviour
         
         List<SaveData> loadedData = Load();
         for(int x = 0; x< loadedData.Count; x++){
-            total+=loadedData[x].teleports;
+            total = loadedData[x].teleports;
         }
         float average = total/loadedData.Count;
 
@@ -122,7 +124,7 @@ public class TimeTracker : MonoBehaviour
         //UnityEngine.Debug.Log(CalculatePercentage(averageTime,loadedData[0].goalTime));
     }
 
-    public int getTs(){
+/*    public int getTs(){
         //SaveData send = new SaveData(teleports,ts);
         float total = 0;
         TimeSpan totalTime = TimeSpan.Zero;
@@ -138,8 +140,34 @@ public class TimeTracker : MonoBehaviour
 
          //CalculatePercentage(average,loadedData[0].goalTeleports);
         return CalculatePercentage(averageTime,loadedData[0].goalTime);
+    } */   
+    public string getTs(){
+        //Here we want to have a for loop to get the time it took for each round and then return it as a string
+        string formattedTime;
+        List<float> timeLapses = new List<float>();
+
+        List<SaveData> loadedData = Load();
+
+        int i = 0;
+
+        foreach (SaveData data in loadedData)
+        {
+            i++;
+            float timeLapse = (float)data.time.TotalSeconds;
+            formattedTime = FormatTime(timeLapse);
+            roundTimes += ("Round " + i + ": " + formattedTime + "<br>");
+        }
+
+        return roundTimes;
     }
-    
+
+    private string FormatTime(float timeInSeconds)
+    {
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
     public void LoadShow()
     {
 
