@@ -17,7 +17,7 @@ public class EndingSetup : MonoBehaviour
     void OnEnable()
     {
         ts.SetText("Round Times: <br>"+tracker.getTs().ToString());
-        tp.SetText("Total Teleports: " + tracker.getTps().ToString());
+        tp.SetText("Total Teleports: <br>" + tracker.getTps().ToString());
     }
     // Update is called once per frame
     void Update()
