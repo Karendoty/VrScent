@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/UI/EndingScreen.prefab.meta
+guid: 6d3570dbaff6288419dafd9145547894
+========
 guid: 516526e035680d74aba3ff7d713df441
+>>>>>>>> main:Assets/Prefabs/Teleport Reticle.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

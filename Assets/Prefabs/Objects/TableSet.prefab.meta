@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Objects/TableSet.prefab.meta
 guid: a15687ed2f64ac64b9d5b47801f96d84
 PrefabImporter:
+========
+guid: e8d1d59b4af53fb4685894e0972082fc
+DefaultImporter:
+>>>>>>>> AI:Assets/3rd party/LowPolyFoodLite/LowPolyFoodLite_2020.3.0_HDRP_v1.0.unitypackage.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

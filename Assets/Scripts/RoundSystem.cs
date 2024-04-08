@@ -40,7 +40,7 @@ public class RoundSystem : MonoBehaviour
 
     [Header("Rounds")]
     [Tooltip("ONLY USE EITHER 4 OR 8!!")]
-    [SerializeField] private int maxRounds = 4; //ONLY USE EITHER 4 OR 8!!
+    [SerializeField] private int maxRounds = 6; //ONLY USE NUMBERS DIVISIBLE BY 2!!
     private int currentRound;
 
     [Header("Player Timer")]
@@ -109,11 +109,12 @@ public class RoundSystem : MonoBehaviour
             {
                 userFollowUI.gameObject.SetActive(false);
                 uiTimerDuration = maxUITimeUp;
+                timeTracker.startTimer();
                 isUIUp = false;
             }
         }
 
-        if (isArrowTimerGoing) //this isn't executing for some reason
+        if (isArrowTimerGoing) 
         {
             //Debug.Log("Arrow");
             if (arrowTimer > 0)
@@ -163,15 +164,21 @@ public class RoundSystem : MonoBehaviour
 
     private void EndSimulation()
     {
+        timeTracker.stopTimer();
+
         isGameEnded = true;
         fade.fadeDuration = 2;
         fade.FadeOut();
 
         Debug.Log("Ending Game...");
+        timeTracker.saveAllData();
         timeTracker.Export();
+        timeTracker.ShowEnding();
         objectToFind.GetComponent<SphereCollider>().enabled = false;
 
-        BoardUI.text = "Thank you for playing! <br> You may now take off the headset.";
+        //BoardUI.text = "Thank you for playing! <br> You may now take off the headset.";
+        BoardUI.gameObject.SetActive(false);
+        
         RelocatePlayer();
     }
 
@@ -209,7 +216,7 @@ public class RoundSystem : MonoBehaviour
         fade.FadeIn();
         fade.fadeDuration = 1; //resets back to default
 
-        timeTracker.startTimer();
+        
 
         //Enables UI Popup timer
         isUITimerGoing = true;

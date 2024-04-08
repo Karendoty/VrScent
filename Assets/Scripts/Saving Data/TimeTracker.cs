@@ -5,18 +5,33 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TimeTracker : MonoBehaviour
 {
     Stopwatch stopWatch;
     public int teleports;
+    public TeleportationProvider tp;
+
+    List<SaveData> dataList = new List<SaveData>();
+
+    SaveAndLoadData saveSystem = new SaveAndLoadData();
+
+    public TimeSpan goalTS;
+    public int goalTP;
 
     public TimeSpan ts;
+
+    string roundTimes;
+
+    public GameObject endingScreen;
     // Start is called before the first frame update
     void Start()
     {
+        goalTS = new TimeSpan(0,1,1);
         stopWatch = new Stopwatch();
-        startTimer(); //<-- we might want to change it later to start after player is done w/ tutorial
+        
+        //startTimer(); //<-- we might want to change it later to start after player is done w/ tutorial
     }
 
     // Update is called once per frame
@@ -35,8 +50,8 @@ public class TimeTracker : MonoBehaviour
     {
         stopWatch.Stop();
         ts = stopWatch.Elapsed;
-        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            ts.Hours, ts.Minutes, ts.Seconds,
+        string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
+            ts.Minutes, ts.Seconds,
             ts.Milliseconds / 10);
 
         UnityEngine.Debug.Log(elapsedTime);
@@ -52,26 +67,157 @@ public class TimeTracker : MonoBehaviour
 
     public void Save()
     {
-        //SaveData send = new SaveData(teleports,ts);
-        SaveAndLoadData.SaveVRData(teleports, ts);
+        SaveData send = new SaveData(teleports,ts,goalTS,goalTP);
+        dataList.Add(send);
+        //startTimer();
     }
 
-    public void Load()
+    public void saveAllData(){
+        SaveAndLoadData.SaveVRData(dataList);
+        
+
+    }
+
+    public List<SaveData> Load()
     {
         //SaveData send = new SaveData(teleports,ts);
-        SaveData data = SaveAndLoadData.LoadData();
-        UnityEngine.Debug.Log(data.teleports);
-        UnityEngine.Debug.Log(data.time);
+        List<SaveData> data = SaveAndLoadData.LoadData();
+        UnityEngine.Debug.Log(data.Count);
+        return data;
+    }
+
+    /*public int getTps(){
+        //SaveData send = new SaveData(teleports,ts);
+        float total = 0;
+        TimeSpan totalTime = TimeSpan.Zero;
+        
+        List<SaveData> loadedData = Load();
+        for(int x = 0; x< loadedData.Count; x++){
+            total+=loadedData[x].teleports;
+            totalTime+=loadedData[x].time;
+        }
+        float average = total/loadedData.Count;
+        TimeSpan averageTime = TimeSpan.FromTicks(totalTime.Ticks / loadedData.Count);
+
+
+        return CalculatePercentage(average,loadedData[0].goalTeleports);
+        //UnityEngine.Debug.Log(CalculatePercentage(averageTime,loadedData[0].goalTime));
+    }*/
+
+    public void AddTeleport()
+    {
+        teleports++;
+        UnityEngine.Debug.Log(teleports);
+    }
+
+    public int getTps(){
+        //SaveData send = new SaveData(teleports,ts);
+        int total = 0;
+        
+        List<SaveData> loadedData = Load();
+        for(int x = 0; x< loadedData.Count; x++){
+            total = loadedData[x].teleports;
+        }
+        float average = total/loadedData.Count;
+
+        return total;
+        //UnityEngine.Debug.Log(CalculatePercentage(averageTime,loadedData[0].goalTime));
+    }
+
+/*    public int getTs(){
+        //SaveData send = new SaveData(teleports,ts);
+        float total = 0;
+        TimeSpan totalTime = TimeSpan.Zero;
+        
+        List<SaveData> loadedData = Load();
+        for(int x = 0; x< loadedData.Count; x++){
+            total+=loadedData[x].teleports;
+            totalTime+=loadedData[x].time;
+        }
+        float average = total/loadedData.Count;
+        TimeSpan averageTime = TimeSpan.FromTicks(totalTime.Ticks / loadedData.Count);
+
+
+         //CalculatePercentage(average,loadedData[0].goalTeleports);
+        return CalculatePercentage(averageTime,loadedData[0].goalTime);
+    } */   
+    public string getTs(){
+        //Here we want to have a for loop to get the time it took for each round and then return it as a string
+        string formattedTime;
+        List<float> timeLapses = new List<float>();
+
+        List<SaveData> loadedData = Load();
+
+        int i = 0;
+
+        foreach (SaveData data in loadedData)
+        {
+            i++;
+            float timeLapse = (float)data.time.TotalSeconds;
+            formattedTime = FormatTime(timeLapse);
+            roundTimes += ("Round " + i + ": " + formattedTime + "<br>");
+        }
+
+        return roundTimes;
+    }
+
+    private string FormatTime(float timeInSeconds)
+    {
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void LoadShow()
+    {
+
+
+
+
+       // UnityEngine.Debug.Log(data[1].teleports);
+        //UnityEngine.Debug.Log(data[1].time);
+    }
+
+    int CalculatePercentage(float given, int goal){
+        if(goal>given){
+            return (int)((given/(float)(goal))*100);
+        }else{
+            return (int)(((float)goal/given)*100);
+        }
+    }
+
+    int CalculatePercentage(TimeSpan givenTS, TimeSpan goalTS){
+        float goal = (float)goalTS.Ticks;
+        float given = (float)givenTS.Ticks;
+        if(given>goal){
+            return((int)((goal/given)*100));
+        }else{
+            return((int)((given/goal)*100));
+
+        }
+    }
+
+    public void ShowEnding(){
+        endingScreen.SetActive(true);
+    }
+
+    string OrganizeOutput(){
+        List<SaveData> data = Load();
+        string ret = "";
+        for(int x = 0; x<data.Count;x++){
+            ret+="Teleports: "+data[x].teleports+" time: "+data[x].time+"\n";
+        }
+        return ret;
     }
 
     public void Export()
     {
-        string data = "Teleports: " + teleports + " time: " + ts;
+        string data = OrganizeOutput();
         string path = Application.persistentDataPath;
 
         using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "export.txt")))
         {
-
+            UnityEngine.Debug.Log(data);
             outputFile.WriteLine(data);
         }
 
