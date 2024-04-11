@@ -13,6 +13,8 @@ public class VRInteractionsWithScent : MonoBehaviour
     public float activationWhiff1 = 2f;
     public float activationWhiff2 = 5f;
     public float activationWhiff3 = 10f;
+    private float whiffTimer;
+    private bool activateWhiff;
 
     [Header("Threashold Distances")]
     [SerializeField] private float firstThreshold;
@@ -29,12 +31,24 @@ public class VRInteractionsWithScent : MonoBehaviour
     [Header("Tutorial")]
     public bool isTutorial;
 
-    void Start()
-    {
-    }
-
     private void Update()
     {
+        if (activateWhiff)
+        {
+            if(whiffTimer > 0)
+            {
+                Debug.Log(whiffTimer);
+                whiffTimer -= Time.deltaTime;
+            }
+            else if(whiffTimer < 0)
+            {
+                activateWhiff = false;
+                arduino.ToggleFirstAtomizer(false);
+                arduino.ToggleSecondAtomizer(false);
+                arduino.ToggleThirdAtomizer(false);
+                arduino.ToggleFourthAtomizer(false);
+            }
+        }
 
         direction = player.position - transform.position;
 
@@ -53,7 +67,8 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold one...");
 
                     //Send signal to Atomizer to fire for a small amount of time HERE -->
-                    StartCoroutine(ActivateScent(activationWhiff1));
+                    //StartCoroutine(ActivateScent(activationWhiff1));
+                    ScentActivation(activationWhiff1);
                     //<--
 
                     firstThresholdPassed = true;
@@ -66,7 +81,7 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold two...");
 
                     //Send signal to activate Atomizer longer HERE -->
-                    StartCoroutine(ActivateScent(activationWhiff2));
+                    ScentActivation(activationWhiff2);
                     //<--
 
                     secondThresholdPassed = true;
@@ -81,7 +96,7 @@ public class VRInteractionsWithScent : MonoBehaviour
                     Debug.Log("Entered " + gameObject.name + " threshold three...");
 
                     //Send signal to activate Atomizer even longer HERE -->
-                    StartCoroutine(ActivateScent(activationWhiff3));
+                    ScentActivation(activationWhiff3);
                     //<--
 
                     thirdThresholdPassed = true;
@@ -101,11 +116,53 @@ public class VRInteractionsWithScent : MonoBehaviour
                 firstThresholdPassed = false;
                 secondThresholdPassed = false;
                 thirdThresholdPassed = false;
+
+                /*arduino.ToggleFirstAtomizer(false);
+                arduino.ToggleSecondAtomizer(false);
+                arduino.ToggleFourthAtomizer(false);*/
+
+                //whiffTimer = 0;
+                //activateWhiff = false;
             }
         }
     }
 
-    IEnumerator ActivateScent(float activationLength)
+    private void ScentActivation(float activationLength)
+    {
+        switch (scent)
+        {
+            case "coffee":
+                activateWhiff = true;
+                arduino.ToggleFirstAtomizer(true);
+                whiffTimer = activationLength;
+                //arduino.ToggleFirstAtomizer(false);
+                break;
+
+            case "cinnamon":
+                activateWhiff = true;
+                arduino.ToggleSecondAtomizer(true);
+                whiffTimer = activationLength;
+                //arduino.ToggleSecondAtomizer(false);
+                break;
+
+            case "rose":
+                activateWhiff = true;
+                arduino.ToggleThirdAtomizer(true);
+                whiffTimer = activationLength;
+                //arduino.ToggleThirdAtomizer(false);
+                break;
+
+            case "citrus":
+                activateWhiff = true;
+                arduino.ToggleFourthAtomizer(true);
+                whiffTimer = activationLength;
+                //arduino.ToggleFourthAtomizer(false);
+                break;
+        }
+
+    }
+
+/*    IEnumerator ActivateScent(float activationLength)
     {
         switch (scent)
         {
@@ -135,4 +192,4 @@ public class VRInteractionsWithScent : MonoBehaviour
                 break;
         }
     }
-}
+*/}

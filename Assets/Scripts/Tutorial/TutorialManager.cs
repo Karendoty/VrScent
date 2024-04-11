@@ -35,7 +35,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private Transform UIPosition2;
 
     private bool hasInitated = false;
-    private bool hasTeleported = false;
+    public bool hasTeleported = false;
     private bool hasRotated = false;
 
     private string currentPanelOpen;
@@ -44,7 +44,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject demoRightController;
     [SerializeField] private GameObject scentObject;
     [SerializeField] private GameObject circle;
-    [SerializeField] private GameObject bench;
+    [SerializeField] private GameObject flag;
 
     public FadeToBlack fade;
 
@@ -124,7 +124,7 @@ public class TutorialManager : MonoBehaviour
                 scentPanel.SetActive(false);
                 findPanel.SetActive(true);
                 //scentObject.SetActive(false);
-                bench.SetActive(true);
+                flag.SetActive(true);
                 UI.position = UIPosition1.position;
                 UI.rotation = UIPosition1.rotation;
 
@@ -166,7 +166,7 @@ public class TutorialManager : MonoBehaviour
 
     public void FirstRotation()
     {
-        if (!hasRotated && hasInitated)
+        if (!hasRotated && hasInitated && hasTeleported)
         {
             Debug.Log("First Rotate!");
             NextPanel();
