@@ -21,17 +21,18 @@ public class CircleDetect : MonoBehaviour
     {
         if(teleports >= 3 && !boolie)
         {
-            tutorialManager.hasTeleported = true;
+            Debug.Log("All done");
+            tutorialManager.FirstTeleportation();
             boolie = true;
         }
-        teleportTXT.text = teleports.ToString() + " teleports";
+        teleportTXT.text = teleports.ToString() + " Teleports";
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (circleTransforms.Count > 0)
+            if (teleports <= 3)
             {
                 teleports++;
                 gameObject.transform.position = circleTransforms[0].transform.position;
