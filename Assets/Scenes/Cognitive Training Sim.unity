@@ -25318,6 +25318,7 @@ GameObject:
   - component: {fileID: 758912257}
   - component: {fileID: 758912256}
   - component: {fileID: 758912258}
+  - component: {fileID: 758912259}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -25332,7 +25333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758912255}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31fbda60e28816c4285a7430d578f2cc, type: 3}
   m_Name: 
@@ -25395,6 +25396,45 @@ MonoBehaviour:
   tp: {fileID: 1281298094}
   goalTP: 0
   endingScreen: {fileID: 535932239}
+--- !u!114 &758912259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758912255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c13cf0a482297f48bd990b93862c95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFindPrefab: {fileID: 7409985973028028850, guid: 19941a3d01fdcac479049fa11506b508,
+    type: 3}
+  objectToFind: {fileID: 0}
+  objSpawnLocations:
+  - {fileID: 752189286}
+  - {fileID: 999020303}
+  - {fileID: 2132139126}
+  - {fileID: 78957253}
+  PopupUI: {fileID: 18321006}
+  BoardUI: {fileID: 1736217259}
+  userFollowUI: {fileID: 18321008}
+  helperArrow: {fileID: 1391717280}
+  uiTimer: 0
+  maxUITime: 60
+  uiTimerDuration: 0
+  maxUITimeUp: 10
+  arrowTimer: 0
+  maxArrowTime: 60
+  maxRounds: 6
+  timeTracker: {fileID: 758912258}
+  fade: {fileID: 1076249746}
+  playerSpawnPoints:
+  - {fileID: 527089446}
+  - {fileID: 1068341039}
+  - {fileID: 1389651863}
+  - {fileID: 1059271573}
+  originalSpawnPoint: {fileID: 1311797591}
 --- !u!1001 &759106724
 PrefabInstance:
   m_ObjectHideFlags: 0
