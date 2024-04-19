@@ -9,6 +9,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TimeTracker : MonoBehaviour
 {
+    
+
     Stopwatch stopWatch;
     public int teleports;
     public TeleportationProvider tp;
@@ -107,8 +109,10 @@ public class TimeTracker : MonoBehaviour
     public void AddTeleport()
     {
         teleports++;
-        UnityEngine.Debug.Log(teleports);
+        //UnityEngine.Debug.Log(teleports);
     }
+
+    
 
     public int getTps(){
         //SaveData send = new SaveData(teleports,ts);

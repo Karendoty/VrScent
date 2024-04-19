@@ -39,8 +39,8 @@ public class RoundSystem : MonoBehaviour
 
 
     [Header("Rounds")]
-    [Tooltip("ONLY USE EITHER 4 OR 8!!")]
-    [SerializeField] private int maxRounds = 6; //ONLY USE NUMBERS DIVISIBLE BY 2!!
+    [Tooltip("Only use even whole numbers numbers")]
+    [SerializeField] private int maxRounds = 6; 
     private int currentRound;
 
     [Header("Player Timer")]
@@ -57,6 +57,7 @@ public class RoundSystem : MonoBehaviour
     public Transform originalSpawnPoint;
 
     private bool isGameEnded;
+    public LineRenderController lineRenderController;
 
     void Start()
     {
@@ -135,7 +136,6 @@ public class RoundSystem : MonoBehaviour
     {
         if (currentRound < maxRounds)
         {
-
             currentRound++;
             Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
@@ -143,6 +143,7 @@ public class RoundSystem : MonoBehaviour
 
             if (currentRound > 1)
             {
+                lineRenderController.RoundDone();
                 timeTracker.stopTimer();
                 RelocatePlayer();
 
@@ -159,6 +160,7 @@ public class RoundSystem : MonoBehaviour
         else
         {
             EndSimulation();
+            lineRenderController.RoundDone();
         }
     }
 
