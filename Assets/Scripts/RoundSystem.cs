@@ -190,6 +190,7 @@ public class RoundSystem : MonoBehaviour
         if (!isGameEnded)
         {
             StartCoroutine(MovePlayer());
+            lineRenderController.MarkEndLocation();
         }
         else
         {
