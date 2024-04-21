@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 5229822}
-  m_IndirectSpecularColor: {r: 0.60990906, g: 0.6519367, b: 0.86901987, a: 1}
+  m_IndirectSpecularColor: {r: 0.60877436, g: 0.65181345, b: 0.86749727, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6897,7 +6897,7 @@ MonoBehaviour:
   firstThreshold: 30
   secondThreshold: 15
   thirdThreshold: 8
-  arduino: {fileID: 0}
+  arduino: {fileID: 1046576738}
   isTutorial: 0
 --- !u!1001 &470152382
 PrefabInstance:

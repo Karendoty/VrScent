@@ -141,7 +141,6 @@ public class RoundSystem : MonoBehaviour
             currentRound++;
             Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
-            PopupUI.text = "Find the " + objectToFind.name + " by the " + currentObjSpawnName;
 
             if (currentRound > 1)
             {
@@ -158,6 +157,8 @@ public class RoundSystem : MonoBehaviour
                 switchObjLocation = true;
                 MoveObject();
             }
+
+            PopupUI.text = "Find the " + objectToFind.name + " by the " + currentObjSpawnName;
         }
         else
         {
