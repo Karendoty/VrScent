@@ -7,6 +7,12 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
 
+/*
+ -- Attach this to an empty game object (we just named it Game Manager) --
+
+
+ */
+
 public class RoundSystem : MonoBehaviour
 {
     [Header("Goal Objects")]
