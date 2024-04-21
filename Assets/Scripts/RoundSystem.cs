@@ -10,16 +10,20 @@ using Random = UnityEngine.Random;
 /*
  -- Attach this to an empty game object (we just named it Game Manager) --
 
-
+This is the main functionality of our simulation that controls where the player
+and goal spawns, the helper ui elements (arrow and pop-up), rounds, and ending
+scenario. 
  */
 
 public class RoundSystem : MonoBehaviour
 {
     [Header("Goal Objects")]
-    //public GameObject[] objectsToFind;
+    [Tooltip("Prefab should have GoalObjectDetection component")]
     [SerializeField] GameObject objectToFindPrefab;
-    public GameObject objectToFind;
+    private GameObject objectToFind; //this later gets filled by objectToFindPrefab
+    [Tooltip("Locations where the goal object will spawn")]
     [SerializeField] private Transform[] objSpawnLocations;
+    [Tooltip("Location names where each point is at. ")]
     [SerializeField] private String[] objSpawnNames;
     private String currentObjSpawnName;
     private Transform initialObjectSpawn;
@@ -55,7 +59,7 @@ public class RoundSystem : MonoBehaviour
     public TimeTracker timeTracker;
 
     private GameObject player;
-    private Camera playerCamera;
+    //private Camera playerCamera;
     [SerializeField] private FadeToBlack fade;
 
     [Header("Player Spawning")]
@@ -71,7 +75,7 @@ public class RoundSystem : MonoBehaviour
     {
         timeTracker = GetComponent<TimeTracker>();
         player = GameObject.FindWithTag("Player");
-        playerCamera = Camera.main;
+        //playerCamera = Camera.main;
 
         //Populate the temporary list with available spawn points
         availableSpawnPoints.AddRange(playerSpawnPoints);
@@ -85,7 +89,6 @@ public class RoundSystem : MonoBehaviour
         uiTimer = 120;
         uiTimerDuration = maxUITimeUp;
         arrowTimer = 180f; //for the first round we want it to be longer because they are exploring the area
-        //StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
 
         StartNewRound();
     }

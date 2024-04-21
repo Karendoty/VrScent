@@ -41,12 +41,6 @@ public class GoalObjectDectection : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player found!");
-            //--This could honestly be taken out
-            if (!thresholdPassed)
-            {
-                thresholdPassed = true;
-                //roundSystem.CheckObject(gameObject);
-            }//--
             if (isTutorial)
             {
                 GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextPanel();
@@ -59,20 +53,17 @@ public class GoalObjectDectection : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (thresholdPassed)
+            timer -= Time.deltaTime;
+            if (timer <= 0)
             {
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                if (!isTutorial)
                 {
-                    if (!isTutorial)
-                    {
-                        isTimerGoing = false;
-                        StartCoroutine(DetectionCooldown());
-                        roundSystem.StartNewRound();
+                    isTimerGoing = false;
+                    StartCoroutine(DetectionCooldown());
+                    roundSystem.StartNewRound();
 
-                        timer = timeToStayInZone;
+                    timer = timeToStayInZone;
 
-                    }
                 }
             }
         }
