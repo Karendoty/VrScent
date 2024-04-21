@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 5229822}
-  m_IndirectSpecularColor: {r: 0.60898554, g: 0.65180975, b: 0.86744004, a: 1}
+  m_IndirectSpecularColor: {r: 0.60990906, g: 0.6519367, b: 0.86901987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12594,6 +12594,11 @@ MonoBehaviour:
   - {fileID: 999020303}
   - {fileID: 2132139126}
   - {fileID: 78957253}
+  objSpawnNames:
+  - Flower Stand
+  - Fruit Stand
+  - Coffee Shop
+  - Bakery Truck
   PopupUI: {fileID: 18321006}
   BoardUI: {fileID: 1736217259}
   userFollowUI: {fileID: 18321008}

@@ -14,6 +14,8 @@ public class RoundSystem : MonoBehaviour
     [SerializeField] GameObject objectToFindPrefab;
     public GameObject objectToFind;
     [SerializeField] private Transform[] objSpawnLocations;
+    [SerializeField] private String[] objSpawnNames;
+    private String currentObjSpawnName;
     private Transform initialObjectSpawn;
     private bool switchObjLocation = false;
 
@@ -139,7 +141,7 @@ public class RoundSystem : MonoBehaviour
             currentRound++;
             Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
-            PopupUI.text = "Find the " + objectToFind.name;
+            PopupUI.text = "Find the " + objectToFind.name + " by the " + currentObjSpawnName;
 
             if (currentRound > 1)
             {
@@ -273,24 +275,28 @@ public class RoundSystem : MonoBehaviour
                     //Debug.Log("Going to Point 3");
                     objectToFind.transform.position = objSpawnLocations[2].position;
                     objectToFind.transform.rotation = objSpawnLocations[2].rotation;
+                    currentObjSpawnName = objSpawnNames[2];
                     break;
                 //objSpawnLocations[1]
                 case "Point 2":
                     //Debug.Log("Going to Point 4");
                     objectToFind.transform.position = objSpawnLocations[3].position;
                     objectToFind.transform.rotation = objSpawnLocations[3].rotation;
+                    currentObjSpawnName = objSpawnNames[3];
                     break;
                 //objSpawnLocations[2]
                 case "Point 3":
                     //Debug.Log("Going to Point 1");
                     objectToFind.transform.position = objSpawnLocations[0].position;
                     objectToFind.transform.rotation = objSpawnLocations[0].rotation;
+                    currentObjSpawnName = objSpawnNames[0];
                     break;
                 //objSpawnLocations[3]
                 case "Point 4":
                     //Debug.Log("Going to Point 2");
                     objectToFind.transform.position = objSpawnLocations[1].position;
                     objectToFind.transform.rotation = objSpawnLocations[1].rotation;
+                    currentObjSpawnName = objSpawnNames[1];
                     break;
             }
 
@@ -307,6 +313,7 @@ public class RoundSystem : MonoBehaviour
 
             objectToFind.transform.position = selectedTransform.position;
             objectToFind.transform.rotation = selectedTransform.rotation;
+            currentObjSpawnName = objSpawnNames[randomIndex];
         }
 
     }
