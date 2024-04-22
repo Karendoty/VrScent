@@ -6,6 +6,8 @@ public class LineRenderController : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Camera projectionCamera;
+    [SerializeField] private Transform startCube;
+    [SerializeField] private Transform endCube;
     [SerializeField] private List<Material> lineMaterials = new List<Material>();
     private List<Transform> playerTransforms = new List<Transform>();
     private LineRenderer lineRenderer;
@@ -39,11 +41,17 @@ public class LineRenderController : MonoBehaviour
 
     public void LogPlayersTransform()
     {
+        
         totalPoints++;
         playerPoint = new GameObject("point " + totalPoints);
         playerPoint.transform.position = player.transform.position;
         //playerPoint.transform.rotation = player.transform.rotation;
         playerTransforms.Add(playerPoint.transform);
+
+        if(playerTransforms.Count == 1)
+        {
+            startCube.position = playerTransforms[0].position;
+        }
     }
 
     public void RoundDone()
@@ -56,6 +64,11 @@ public class LineRenderController : MonoBehaviour
         {
             lineRenderer.material = lineMaterials[round];
         }
+    }
+
+    public void MarkEndLocation()
+    {
+        endCube.position = playerTransforms[playerTransforms.Count - 1].position;
     }
 
     private void Screenshot()

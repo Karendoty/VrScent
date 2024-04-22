@@ -7,13 +7,25 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
 
+/*
+ -- Attach this to an empty game object (we just named it Game Manager) --
+
+This is the main functionality of our simulation that controls where the player
+and goal spawns, the helper ui elements (arrow and pop-up), rounds, and ending
+scenario. 
+ */
+
 public class RoundSystem : MonoBehaviour
 {
     [Header("Goal Objects")]
-    //public GameObject[] objectsToFind;
+    [Tooltip("Prefab should have GoalObjectDetection component")]
     [SerializeField] GameObject objectToFindPrefab;
-    public GameObject objectToFind;
+    public GameObject objectToFind; //this later gets filled by objectToFindPrefab
+    [Tooltip("Locations where the goal object will spawn")]
     [SerializeField] private Transform[] objSpawnLocations;
+    [Tooltip("Location names where each point is at. ")]
+    [SerializeField] private String[] objSpawnNames;
+    private String currentObjSpawnName;
     private Transform initialObjectSpawn;
     private bool switchObjLocation = false;
 
@@ -47,7 +59,7 @@ public class RoundSystem : MonoBehaviour
     public TimeTracker timeTracker;
 
     private GameObject player;
-    private Camera playerCamera;
+    //private Camera playerCamera;
     [SerializeField] private FadeToBlack fade;
 
     [Header("Player Spawning")]
@@ -63,7 +75,7 @@ public class RoundSystem : MonoBehaviour
     {
         timeTracker = GetComponent<TimeTracker>();
         player = GameObject.FindWithTag("Player");
-        playerCamera = Camera.main;
+        //playerCamera = Camera.main;
 
         //Populate the temporary list with available spawn points
         availableSpawnPoints.AddRange(playerSpawnPoints);
@@ -77,7 +89,6 @@ public class RoundSystem : MonoBehaviour
         uiTimer = 120;
         uiTimerDuration = maxUITimeUp;
         arrowTimer = 180f; //for the first round we want it to be longer because they are exploring the area
-        //StartCoroutine(HelperUI(60f)); //maybe we want to do a timer instead?
 
         StartNewRound();
     }
@@ -139,7 +150,6 @@ public class RoundSystem : MonoBehaviour
             currentRound++;
             Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
-            PopupUI.text = "Find the " + objectToFind.name;
 
             if (currentRound > 1)
             {
@@ -156,6 +166,8 @@ public class RoundSystem : MonoBehaviour
                 switchObjLocation = true;
                 MoveObject();
             }
+
+            PopupUI.text = "Find the " + objectToFind.name + " by the " + currentObjSpawnName;
         }
         else
         {
@@ -190,6 +202,7 @@ public class RoundSystem : MonoBehaviour
         if (!isGameEnded)
         {
             StartCoroutine(MovePlayer());
+            lineRenderController.MarkEndLocation();
         }
         else
         {
@@ -273,24 +286,28 @@ public class RoundSystem : MonoBehaviour
                     //Debug.Log("Going to Point 3");
                     objectToFind.transform.position = objSpawnLocations[2].position;
                     objectToFind.transform.rotation = objSpawnLocations[2].rotation;
+                    currentObjSpawnName = objSpawnNames[2];
                     break;
                 //objSpawnLocations[1]
                 case "Point 2":
                     //Debug.Log("Going to Point 4");
                     objectToFind.transform.position = objSpawnLocations[3].position;
                     objectToFind.transform.rotation = objSpawnLocations[3].rotation;
+                    currentObjSpawnName = objSpawnNames[3];
                     break;
                 //objSpawnLocations[2]
                 case "Point 3":
                     //Debug.Log("Going to Point 1");
                     objectToFind.transform.position = objSpawnLocations[0].position;
                     objectToFind.transform.rotation = objSpawnLocations[0].rotation;
+                    currentObjSpawnName = objSpawnNames[0];
                     break;
                 //objSpawnLocations[3]
                 case "Point 4":
                     //Debug.Log("Going to Point 2");
                     objectToFind.transform.position = objSpawnLocations[1].position;
                     objectToFind.transform.rotation = objSpawnLocations[1].rotation;
+                    currentObjSpawnName = objSpawnNames[1];
                     break;
             }
 
@@ -307,6 +324,7 @@ public class RoundSystem : MonoBehaviour
 
             objectToFind.transform.position = selectedTransform.position;
             objectToFind.transform.rotation = selectedTransform.rotation;
+            currentObjSpawnName = objSpawnNames[randomIndex];
         }
 
     }
