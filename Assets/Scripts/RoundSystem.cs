@@ -6,6 +6,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
+using System.Diagnostics;
 
 /*
  -- Attach this to an empty game object (we just named it Game Manager) --
@@ -70,6 +71,12 @@ public class RoundSystem : MonoBehaviour
 
     private bool isGameEnded;
     public LineRenderController lineRenderController;
+    private List<TimeSpan> wrongTimes = new List<TimeSpan>();
+    private WrongWayTimer wrongWay;
+    private float distance;
+    private float lastDistance;
+
+
 
     void Start()
     {
@@ -141,6 +148,55 @@ public class RoundSystem : MonoBehaviour
             }
         }
 
+
+        string initialSpawnName = initialObjectSpawn.name;
+            switch (initialSpawnName)
+            {
+                //objSpawnLocations[0]
+                case "Point 1":
+                    CheckDistance(objSpawnLocations[2]);
+
+                    break;
+                //objSpawnLocations[1]
+                case "Point 2":
+                    //Debug.Log("Going to Point 4");
+                    CheckDistance(objSpawnLocations[3]);
+
+                    break;
+                //objSpawnLocations[2]
+                case "Point 3":
+                    //Debug.Log("Going to Point 1");
+                    CheckDistance(objSpawnLocations[4]);
+
+                    break;
+                //objSpawnLocations[3]
+                case "Point 4":
+                    //Debug.Log("Going to Point 2");
+                    CheckDistance(objSpawnLocations[1]);
+
+                    break;
+            }
+
+    }
+
+    private void CheckDistance(Transform location){
+                    distance = Vector3.Distance(location.position,transform.position);
+                    if(lastDistance == 0){
+                        lastDistance = distance;
+                        return;
+                    }
+                    if(distance>lastDistance){
+                        wrongWay.WrongWay();
+                        lastDistance = distance;
+                    }else{
+                        wrongWay.RightWay();
+                        lastDistance = distance;
+                    }
+    }
+
+
+    private void ResetTimer(){
+        wrongTimes.Add(wrongWay.GetTimeSpan());
     }
 
     public void StartNewRound()
@@ -148,7 +204,7 @@ public class RoundSystem : MonoBehaviour
         if (currentRound < maxRounds)
         {
             currentRound++;
-            Debug.Log("Round " + currentRound);
+            //Debug.Log("Round " + currentRound);
             //Debug.Log("Find the " + objectToFind.name);
 
             if (currentRound > 1)
@@ -158,6 +214,8 @@ public class RoundSystem : MonoBehaviour
                 RelocatePlayer();
 
                 ResetUI();
+
+                ResetTimer();
             }
 
             //After halfway through, move object again.
@@ -165,6 +223,7 @@ public class RoundSystem : MonoBehaviour
             {
                 switchObjLocation = true;
                 MoveObject();
+                ResetTimer();
             }
 
             PopupUI.text = "Find the " + objectToFind.name + " by the " + currentObjSpawnName;
@@ -172,6 +231,7 @@ public class RoundSystem : MonoBehaviour
         else
         {
             EndSimulation();
+            ResetTimer();
             lineRenderController.RoundDone();
         }
     }
@@ -184,7 +244,7 @@ public class RoundSystem : MonoBehaviour
         fade.fadeDuration = 2;
         fade.FadeOut();
 
-        Debug.Log("Ending Game...");
+        //Debug.Log("Ending Game...");
         timeTracker.saveAllData();
         timeTracker.Export();
         timeTracker.ShowEnding();
