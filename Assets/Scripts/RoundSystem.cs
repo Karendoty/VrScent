@@ -20,7 +20,7 @@ public class RoundSystem : MonoBehaviour
     [Header("Goal Objects")]
     [Tooltip("Prefab should have GoalObjectDetection component")]
     [SerializeField] GameObject objectToFindPrefab;
-    private GameObject objectToFind; //this later gets filled by objectToFindPrefab
+    public GameObject objectToFind; //this later gets filled by objectToFindPrefab
     [Tooltip("Locations where the goal object will spawn")]
     [SerializeField] private Transform[] objSpawnLocations;
     [Tooltip("Location names where each point is at. ")]
