@@ -53,7 +53,7 @@ public class RoundSystem : MonoBehaviour
 
     [Header("Rounds")]
     [Tooltip("Only use even whole numbers numbers")]
-    [SerializeField] private int maxRounds = 6; 
+    [SerializeField] private int maxRounds = 6;
     private int currentRound;
 
     [Header("Player Timer")]
@@ -72,7 +72,7 @@ public class RoundSystem : MonoBehaviour
     private bool isGameEnded;
     public LineRenderController lineRenderController;
     private List<TimeSpan> wrongTimes = new List<TimeSpan>();
-    private WrongWayTimer wrongWay;
+    private WrongWayTimer wrongWay = new WrongWayTimer();
     private float distance;
     private float lastDistance;
 
@@ -133,7 +133,7 @@ public class RoundSystem : MonoBehaviour
             }
         }
 
-        if (isArrowTimerGoing) 
+        if (isArrowTimerGoing)
         {
             //Debug.Log("Arrow");
             if (arrowTimer > 0)
@@ -150,52 +150,58 @@ public class RoundSystem : MonoBehaviour
 
 
         string initialSpawnName = initialObjectSpawn.name;
-            switch (initialSpawnName)
-            {
-                //objSpawnLocations[0]
-                case "Point 1":
-                    CheckDistance(objSpawnLocations[2]);
+        switch (initialSpawnName)
+        {
+            //objSpawnLocations[0]
+            case "Point 1":
+                CheckDistance(objSpawnLocations[2]);
 
-                    break;
-                //objSpawnLocations[1]
-                case "Point 2":
-                    //Debug.Log("Going to Point 4");
-                    CheckDistance(objSpawnLocations[3]);
+                break;
+            //objSpawnLocations[1]
+            case "Point 2":
+                //Debug.Log("Going to Point 4");
+                CheckDistance(objSpawnLocations[3]);
 
-                    break;
-                //objSpawnLocations[2]
-                case "Point 3":
-                    //Debug.Log("Going to Point 1");
-                    CheckDistance(objSpawnLocations[4]);
+                break;
+            //objSpawnLocations[2]
+            case "Point 3":
+                //Debug.Log("Going to Point 1");
+                CheckDistance(objSpawnLocations[4]);
 
-                    break;
-                //objSpawnLocations[3]
-                case "Point 4":
-                    //Debug.Log("Going to Point 2");
-                    CheckDistance(objSpawnLocations[1]);
+                break;
+            //objSpawnLocations[3]
+            case "Point 4":
+                //Debug.Log("Going to Point 2");
+                CheckDistance(objSpawnLocations[1]);
 
-                    break;
-            }
+                break;
+        }
 
     }
 
-    private void CheckDistance(Transform location){
-                    distance = Vector3.Distance(location.position,transform.position);
-                    if(lastDistance == 0){
-                        lastDistance = distance;
-                        return;
-                    }
-                    if(distance>lastDistance){
-                        wrongWay.WrongWay();
-                        lastDistance = distance;
-                    }else{
-                        wrongWay.RightWay();
-                        lastDistance = distance;
-                    }
+    private void CheckDistance(Transform location)
+    {
+        distance = Vector3.Distance(location.position, transform.position);
+        if (lastDistance == 0)
+        {
+            lastDistance = distance;
+            return;
+        }
+        if (distance > lastDistance)
+        {
+            wrongWay.WrongWay();
+            lastDistance = distance;
+        }
+        else
+        {
+            wrongWay.RightWay();
+            lastDistance = distance;
+        }
     }
 
 
-    private void ResetTimer(){
+    private void ResetTimer()
+    {
         wrongTimes.Add(wrongWay.GetTimeSpan());
     }
 
@@ -252,7 +258,7 @@ public class RoundSystem : MonoBehaviour
 
         //BoardUI.text = "Thank you for playing! <br> You may now take off the headset.";
         BoardUI.gameObject.SetActive(false);
-        
+
         RelocatePlayer();
     }
 
@@ -291,7 +297,7 @@ public class RoundSystem : MonoBehaviour
         fade.FadeIn();
         fade.fadeDuration = 1; //resets back to default
 
-        
+
 
         //Enables UI Popup timer
         isUITimerGoing = true;
