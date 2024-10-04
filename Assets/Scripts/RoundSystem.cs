@@ -76,7 +76,8 @@ public class RoundSystem : MonoBehaviour
     private float distance;
     private float lastDistance;
 
-
+    [Header("Player Tracking")]
+    public SessionTrackingManager sessionTrackingManager;
 
     void Start()
     {
@@ -244,6 +245,11 @@ public class RoundSystem : MonoBehaviour
 
     private void EndSimulation()
     {
+        UnityEngine.Debug.Log("Ending The simulation");
+
+        //ADDED CALL to SAVE THE TRACKING DATA
+       // sessionTrackingManager.SaveSession();
+
         timeTracker.stopTimer();
 
         isGameEnded = true;

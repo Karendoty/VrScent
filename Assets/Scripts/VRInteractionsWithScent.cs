@@ -37,7 +37,7 @@ public class VRInteractionsWithScent : MonoBehaviour
         {
             if(whiffTimer > 0)
             {
-                Debug.Log(whiffTimer);
+                //Debug.Log(whiffTimer);
                 whiffTimer -= Time.deltaTime;
             }
             else if(whiffTimer < 0)
