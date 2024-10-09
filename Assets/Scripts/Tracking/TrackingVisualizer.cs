@@ -28,7 +28,7 @@ public class TrackingVisualizer : MonoBehaviour
             trackingDataSaver = GetComponent<PlayerTrackingDataSaver>();
         }
 
-        allSessionsCache = trackingDataSaver.LoadAllSessions(filePath);
+        
 
         if (startMarkerPrefab != null)
         {
@@ -47,6 +47,7 @@ public class TrackingVisualizer : MonoBehaviour
 
     public void VisualizeAllSessions()
     {
+        allSessionsCache = trackingDataSaver.LoadAllSessions(filePath);
         if (allSessionsCache != null)
         {
             foreach (var session in allSessionsCache)
