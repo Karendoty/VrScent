@@ -28,7 +28,7 @@ public class PlayerTrackingRecorder : MonoBehaviour
     {
         // Record player position
         Vector3 playerPosition = transform.position;
-        sessionManager.RecordPlayerPosition(playerPosition);
+        sessionManager.AppendPlayerPosition(playerPosition);
 
         // Debug log to track player position in real time
         Debug.Log("Player position recorded at: " + playerPosition);

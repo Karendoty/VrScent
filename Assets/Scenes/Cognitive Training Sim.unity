@@ -14038,7 +14038,7 @@ MonoBehaviour:
   - {fileID: 1059271573}
   originalSpawnPoint: {fileID: 1311797591}
   lineRenderController: {fileID: 616276481}
-  sessionTrackingManager: {fileID: 0}
+  sessionTrackingManager: {fileID: 1387757101}
 --- !u!4 &758912257
 Transform:
   m_ObjectHideFlags: 0
@@ -25356,7 +25356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayerId: 
-  trackingDataSaver: {fileID: 0}
+  trackingDataSaver: {fileID: 1387757104}
 --- !u!114 &1387757102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25369,8 +25369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343f0a6e58c29d84183af6bc956b2136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sessionManager: {fileID: 0}
-  trackingDataSaver: {fileID: 0}
+  sessionManager: {fileID: 1387757101}
+  trackingDataSaver: {fileID: 1387757104}
   startMarkerPrefab: {fileID: 5028620446160567506, guid: 24e37269697c73a448fb1e77d7458460,
     type: 3}
   endMarkerPrefab: {fileID: 8454100308500751033, guid: a7363ea00810ca84b9168fc75489e207,
@@ -37249,7 +37249,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 756848980941004491}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2072389960
+--- !u!114 &2072389966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37258,7 +37258,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 277405954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a55bbef6865964c8272e88306d8ecd, type: 3}
+  m_Script: {fileID: 11500000, guid: f7427aa5eb4b4ff49a324b0203eea462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sessionManager: {fileID: 1387757101}
@@ -40090,7 +40090,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3356025850232905633, guid: ad2ec8ba6184c344393adcb70bdaa9be,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2072389960}
+      addedObject: {fileID: 2072389966}
   m_SourcePrefab: {fileID: 100100000, guid: ad2ec8ba6184c344393adcb70bdaa9be, type: 3}
 --- !u!4 &756848980941004492 stripped
 Transform:

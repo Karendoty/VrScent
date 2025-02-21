@@ -12,16 +12,17 @@ public class TrackingVisualizer : MonoBehaviour
     private Dictionary<string, LineRenderer> lineRenderers = new Dictionary<string, LineRenderer>();
 
     public Material[] lineMaterials;  // LineRenderer materials to cycle through
+    public float lineWidth = 0.5f;
+
     private int materialIndex = 0;  // To track the current material being used
 
-    private string filePath;
+    private readonly string filePath = TrackingConfig.FilePath;
     private Dictionary<string, PlayerTrackingData> allSessionsCache;
 
     private GameObject startMarker;
 
     private void Start()
     {
-        filePath = Application.persistentDataPath + "/player_sessions.json";
 
         if (trackingDataSaver == null)
         {
@@ -47,9 +48,12 @@ public class TrackingVisualizer : MonoBehaviour
 
     public void VisualizeAllSessions()
     {
-        allSessionsCache = trackingDataSaver.LoadAllSessions(filePath);
+        Debug.Log("Attempting to load sessions from: " + TrackingConfig.FilePath);
+        allSessionsCache = trackingDataSaver.LoadAllSessions();
+
         if (allSessionsCache != null)
         {
+            Debug.Log("Found " + allSessionsCache.Count + " sessions to visualize.");
             foreach (var session in allSessionsCache)
             {
                 Debug.Log("Visualizing path for Player ID: " + session.Key);
@@ -76,8 +80,8 @@ public class TrackingVisualizer : MonoBehaviour
                     GameObject lineObj = new GameObject("LineRenderer_" + playerId);
                     lineRenderer = lineObj.AddComponent<LineRenderer>();
 
-                    lineRenderer.startWidth = 0.1f;
-                    lineRenderer.endWidth = 0.1f;
+                    lineRenderer.startWidth = lineWidth;
+                    lineRenderer.endWidth = lineWidth;
 
                     if (lineMaterials.Length > 0)
                     {

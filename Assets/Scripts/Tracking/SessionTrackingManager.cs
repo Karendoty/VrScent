@@ -13,14 +13,11 @@ public class SessionTrackingManager : MonoBehaviour
     // Reference to the PlayerTrackingDataSaver to handle saving/loading the session
     public PlayerTrackingDataSaver trackingDataSaver;
 
-    // File path for saving session data
-    private string filePath;
+    // Use the centralized file path from TrackingConfig.
+    private readonly string filePath = TrackingConfig.FilePath;
 
     private void Start()
     {
-        // Set the file path to save the session data (same file for all sessions)
-        filePath = Application.persistentDataPath + "/player_sessions.json"; // Use plural because it holds multiple sessions
-
         // Ensure trackingDataSaver is assigned
         if (trackingDataSaver == null)
         {
@@ -65,7 +62,7 @@ public class SessionTrackingManager : MonoBehaviour
         if (trackingDataSaver != null && currentSession != null)
         {
             // Load existing sessions from the file
-            Dictionary<string, PlayerTrackingData> existingSessions = trackingDataSaver.LoadAllSessions(filePath);
+            Dictionary<string, PlayerTrackingData> existingSessions = trackingDataSaver.LoadAllSessions();
 
             // If no sessions exist, create a new dictionary
             if (existingSessions == null)
@@ -88,7 +85,7 @@ public class SessionTrackingManager : MonoBehaviour
             }
 
             // Save all sessions (old + new) back to the file
-            trackingDataSaver.SaveAllSessions(existingSessions, filePath);
+            trackingDataSaver.SaveAllSessions(existingSessions);
 
             Debug.Log("Session saved to " + filePath);
         }
@@ -99,11 +96,24 @@ public class SessionTrackingManager : MonoBehaviour
     }
 
     // Record the player's path during gameplay
-    public void RecordPlayerPosition(Vector3 position)
+    public void AppendPlayerPosition(Vector3 position)
     {
         if (currentSession != null)
         {
-            currentSession.playerPath.Add(position);
+            // If there is no previous position, record it.
+            if (currentSession.playerPath.Count == 0)
+            {
+                currentSession.playerPath.Add(position);
+                return;
+            }
+
+            // Get the last recorded position.
+            Vector3 lastPos = currentSession.playerPath[currentSession.playerPath.Count - 1];
+            // Only record if the distance is greater than the threshold (adjust the threshold as needed).
+            if (Vector3.Distance(lastPos, position) > 0.1f)
+            {
+                currentSession.playerPath.Add(position);
+            }
         }
     }
 

@@ -8,40 +8,31 @@ public class PlayerTrackingDataSaver : MonoBehaviour
     // It converts the data into JSON format for storage and retrieves it for later use.
 
     // Save all sessions (serialize to JSON)
-    public void SaveAllSessions(Dictionary<string, PlayerTrackingData> allSessions, string filePath)
+    public void SaveAllSessions(Dictionary<string, PlayerTrackingData> allSessions)
     {
         List<PlayerTrackingData> sessionList = new List<PlayerTrackingData>(allSessions.Values);
         string json = JsonUtility.ToJson(new TrackingDataContainer(sessionList));
 
-        // Debug: Log what is being saved
-        Debug.Log("Saving sessions to file: " + filePath);
+        Debug.Log("Saving sessions to file: " + TrackingConfig.FilePath);
         Debug.Log("Number of sessions being saved: " + sessionList.Count);
 
-        File.WriteAllText(filePath, json);
+        File.WriteAllText(TrackingConfig.FilePath, json);
     }
 
     // Load all sessions (deserialize from JSON)
-    public Dictionary<string, PlayerTrackingData> LoadAllSessions(string filePath)
+    public Dictionary<string, PlayerTrackingData> LoadAllSessions()
     {
-        // Check if the file exists
-        if (File.Exists(filePath))
+        if (File.Exists(TrackingConfig.FilePath))
         {
-            // Read the file content
-            string json = File.ReadAllText(filePath);
-            Debug.Log("Loading sessions from file: " + filePath);
+            string json = File.ReadAllText(TrackingConfig.FilePath);
+            Debug.Log("Loading sessions from file: " + TrackingConfig.FilePath);
 
-            // Deserialize the JSON into TrackingDataContainer object
             TrackingDataContainer loadedData = JsonUtility.FromJson<TrackingDataContainer>(json);
-
-            // Create a dictionary to hold all loaded sessions
             Dictionary<string, PlayerTrackingData> allSessions = new Dictionary<string, PlayerTrackingData>();
 
-            // Ensure that sessions are present
             if (loadedData != null && loadedData.sessions != null)
             {
                 Debug.Log("Number of sessions loaded: " + loadedData.sessions.Count);
-
-                // Loop through each session and add to the dictionary
                 foreach (var session in loadedData.sessions)
                 {
                     Debug.Log($"Loaded session for Player ID: {session.playerId}, Path Points: {session.playerPath.Count}");
@@ -52,12 +43,11 @@ public class PlayerTrackingDataSaver : MonoBehaviour
             {
                 Debug.LogWarning("No session data found in file.");
             }
-
             return allSessions;
         }
 
-        Debug.LogWarning("Session file not found: " + filePath);
-        return new Dictionary<string, PlayerTrackingData>(); // Return empty dictionary if no file exists
+        Debug.LogWarning("Session file not found: " + TrackingConfig.FilePath);
+        return new Dictionary<string, PlayerTrackingData>();
     }
 }
 
